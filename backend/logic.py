@@ -59,8 +59,17 @@ def filtrer_trajets_disponibles(trajets):
         sortie -> [{"id": 1, "places_dispo": 2}, {"id": 3, "places_dispo": 3}]
     """
     # On construit une nouvelle liste, vide au départ.
-    # TODO : à compléter
-    pass
+    trajets_dispo = []
+
+    # On parcourt tous les trajets reçus en paramètre.
+    for trajet in trajets:
+        # On regarde si le trajet a au moins 1 place disponible.
+        if trajet["places_dispo"] >= 1:
+            # Si oui, on l'ajoute à la nouvelle liste.
+            trajets_dispo.append(trajet)
+
+    # On retourne la nouvelle liste, qui contient uniquement les trajets avec places_dispo >= 1.
+    return trajets_dispo
 
 
 def filtrer_par_quartier_depart(trajets, quartier):
@@ -85,8 +94,20 @@ def filtrer_par_quartier_depart(trajets, quartier):
         filtrer_par_quartier_depart(trajets, "Bacongo")
         -> [{"id": 1, "quartier_depart": "Bacongo"}, {"id": 3, "quartier_depart": "Bacongo"}]
     """
-    # TODO : à compléter
-    pass
+    # Initialisation d'une nouvelle liste vide pour stocker les trajets filtrés.
+    trajets_flitres = []
+
+    # On parcourt tous les trajets reçus en paramètre.
+    for trajet in trajets:
+
+        # On vérifie si le quartier de départ du trajet correspond au quartier recherché.
+        if trajet["quartier_depart"] == quartier:
+
+            # Si oui, on ajoute ce trajet à la liste des trajets filtrés.
+            trajets_flitres.append(trajet)
+
+    # On retourne la liste des trajets filtrés.
+    return trajets_flitres
 
 
 def filtrer_par_trajet_complet(trajets, depart, arrivee):
@@ -112,8 +133,20 @@ def filtrer_par_trajet_complet(trajets, depart, arrivee):
         filtrer_par_trajet_complet(trajets, "Bacongo", "Poto-Poto")
         -> [{"id": 1, "quartier_depart": "Bacongo", "quartier_arrivee": "Poto-Poto"}]
     """
-    # TODO : à compléter
-    pass
+    # Initialisation d'une nouvelle liste vide pour stocker les trajets filtrés.
+    trajets_flitres = []
+
+    # On parcourt tous les trajets reçus en paramètre.
+    for trajet in trajets:
+
+        # On vérifie si le quartier de départ et le quartier d'arrivée du trajet correspondent aux quartiers recherchés.
+        if trajet["quartier_depart"] == depart and trajet["quartier_arrivee"] == arrivee:
+
+            # Si oui, on ajoute ce trajet à la liste des trajets filtrés.
+            trajets_flitres.append(trajet)
+
+    # On retourne la liste des trajets filtrés.
+    return trajets_flitres
 
 
 def trier_par_heure(trajets):
@@ -140,8 +173,12 @@ def trier_par_heure(trajets):
         fonctionne directement ("07:00" < "07:30" < "08:00" est vrai en
         comparaison de chaînes), pas besoin de les convertir en nombres.
     """
-    # TODO : à compléter
-    pass
+    # On utilise la fonction sorted() pour trier la liste de trajets par la clé "heure".
+    # La fonction sorted() retourne une nouvelle liste triée, sans modifier la liste d'origine.
+    trajets_tries = sorted(trajets, key=lambda trajet: trajet["heure"])
+
+    # On retourne la nouvelle liste triée.
+    return trajets_tries
 
 
 def trier_par_prix_croissant(trajets):
@@ -159,8 +196,12 @@ def trier_par_prix_croissant(trajets):
         entrée -> [{"prix_place": 700}, {"prix_place": 400}, {"prix_place": 500}]
         sortie -> [{"prix_place": 400}, {"prix_place": 500}, {"prix_place": 700}]
     """
-    # TODO : à compléter
-    pass
+    # On utilise la fonction sorted() pour trier la liste de trajets par la clé "prix_place".
+    # La fonction sorted() retourne une nouvelle liste triée, sans modifier la liste d'origine.
+    trajets_tries = sorted(trajets, key=lambda trajet: trajet["prix_place"])
+
+    # On retourne la nouvelle liste triée.
+    return trajets_tries
 
 
 # ========================================================================
@@ -193,8 +234,20 @@ def compter_reservations_par_trajet(trajet_id, reservations):
         (les 2 réservations du trajet 1 qui ne sont pas "annule";
         la réservation du trajet 2 ne compte pas, ce n'est pas le bon trajet)
     """
-    # TODO : à compléter
-    pass
+    # Initialisation d'un compteur à 0 pour compter les réservations actives.
+    compteur = 0
+
+    # On parcourt toutes les réservations reçues en paramètre.
+    for reservation in reservations:
+
+        # On vérifie si la réservation correspond au trajet recherché ET si son statut n'est pas "annule".
+        if reservation.get("trajet_id") == trajet_id and reservation.get("statut") != "annule":
+
+            # Si les deux conditions sont remplies, on incrémente le compteur.
+            compteur += 1
+
+    # On retourne le nombre total de réservations actives pour le trajet donné.
+    return compteur
 
 
 def verifier_place_disponible(trajet_id, trajets, reservations):
@@ -239,8 +292,28 @@ def verifier_place_disponible(trajet_id, trajets, reservations):
         (3 places au total, 2 déjà prises par des réservations actives,
         il en reste 1)
     """
-    # TODO : à compléter
-    pass
+    # On cherche le trajet correspondant au trajet_id dans la liste des trajets.
+    trajet = next((t for t in trajets if t["id"] == trajet_id), None)
+
+    # Si le trajet n'existe pas, on retourne le message d'erreur approprié.
+    if trajet is None:
+        return {"place_dispo": False, "places_restantes": 0, "message": "Trajet introuvable"}
+
+    # On récupère le nombre de places disponibles pour ce trajet.
+    places_dispo = trajet["places_dispo"]
+
+    # On compte le nombre de réservations actives pour ce trajet.
+    reservations_actives = compter_reservations_par_trajet(trajet_id, reservations)
+
+    # On calcule le nombre de places restantes.
+    places_restantes = places_dispo - reservations_actives
+
+    # Si aucune place n'est disponible, on retourne le message d'erreur approprié.
+    if places_restantes <= 0:
+        return {"place_dispo": False, "places_restantes": 0, "message": "Trajet complet"}
+
+    # Si des places sont disponibles, on retourne les informations correspondantes.
+    return {"place_dispo": True, "places_restantes": places_restantes, "message": ""}
 
 
 def filtrer_reservations_par_statut(reservations, statut):
@@ -266,8 +339,20 @@ def filtrer_reservations_par_statut(reservations, statut):
         filtrer_reservations_par_statut(reservations, "effectue")
         -> [{"id": 1, "statut": "effectue"}, {"id": 3, "statut": "effectue"}]
     """
-    # TODO : à compléter
-    pass
+    # Initialisation d'une nouvelle liste vide pour stocker les réservations filtrées.
+    reservations_filtrees = []
+
+    # On parcourt toutes les réservations reçues en paramètre.
+    for reservation in reservations:
+
+        # On vérifie si le statut de la réservation correspond au statut recherché.
+        if reservation["statut"] == statut:
+
+            # Si oui, on ajoute cette réservation à la liste des réservations filtrées.
+            reservations_filtrees.append(reservation)
+
+    # On retourne la liste des réservations filtrées.
+    return reservations_filtrees
 
 
 def historique_reservations_passager(passager_tel, reservations):
@@ -293,8 +378,20 @@ def historique_reservations_passager(passager_tel, reservations):
         historique_reservations_passager("067111222", reservations)
         -> [{"id": 1, "passager_tel": "067111222"}, {"id": 3, "passager_tel": "067111222"}]
     """
-    # TODO : à compléter
-    pass
+    # Initialisation d'une nouvelle liste vide pour stocker l'historique des réservations du passager.
+    historique = []
+
+    # On parcourt toutes les réservations reçues en paramètre.
+    for reservation in reservations:
+
+        # On vérifie si le numéro de téléphone du passager correspond au numéro recherché.
+        if reservation["passager_tel"] == passager_tel:
+
+            # Si oui, on ajoute cette réservation à l'historique.
+            historique.append(reservation)
+
+    # On retourne la liste de l'historique des réservations du passager.
+    return historique
 
 
 def calculer_taux_annulation(reservations):
@@ -320,8 +417,18 @@ def calculer_taux_annulation(reservations):
         calculer_taux_annulation(reservations) -> 33.3
         (1 annulée sur 3 réservations, soit 33.33...%, arrondi à 33.3)
     """
-    # TODO : à compléter
-    pass
+    # On vérifie si la liste des réservations est vide pour éviter une division par zéro.
+    if not reservations:
+        return 0.0
+
+    # On compte le nombre de réservations annulées.
+    nombre_annulees = sum(1 for reservation in reservations if reservation["statut"] == "annule")
+
+    # On calcule le taux d'annulation en pourcentage.
+    taux_annulation = (nombre_annulees / len(reservations)) * 100
+
+    # On arrondit le taux à 1 décimale et on le retourne.
+    return round(taux_annulation, 1)
 
 
 # ========================================================================
@@ -348,8 +455,24 @@ def compter_trajets_par_quartier_depart(trajets):
         compter_trajets_par_quartier_depart(trajets)
         -> {"Bacongo": 2, "Moungali": 1}
     """
-    # TODO : à compléter
-    pass
+    # Initialisation d'un dictionnaire vide pour stocker le comptage des trajets par quartier.
+    compteur_quartiers = {}
+
+    # On parcourt tous les trajets reçus en paramètre.
+    for trajet in trajets:
+
+        # On récupère le quartier de départ du trajet.
+        quartier = trajet["quartier_depart"]
+
+        # Si le quartier est déjà dans le dictionnaire, on incrémente son compteur.
+        if quartier in compteur_quartiers:
+            compteur_quartiers[quartier] += 1
+        else:
+            # Sinon, on initialise le compteur à 1 pour ce quartier.
+            compteur_quartiers[quartier] = 1
+
+    # On retourne le dictionnaire contenant le nombre de trajets par quartier.
+    return compteur_quartiers
 
 
 def top_conducteurs_par_note(conducteurs, n=3):
@@ -377,9 +500,11 @@ def top_conducteurs_par_note(conducteurs, n=3):
         top_conducteurs_par_note(conducteurs, n=2)
         -> [{"nom": "Jean", "note": 4.9}, {"nom": "Sandra", "note": 4.7}]
     """
-    # TODO : à compléter
-    pass
+    # On utilise la fonction sorted() pour trier la liste de conducteurs par la clé "note" en ordre décroissant.
+    conducteurs_tries = sorted(conducteurs, key=lambda conducteur: conducteur["note"], reverse=True)
 
+    # On retourne les n premiers conducteurs de la liste triée.
+    return conducteurs_tries[:n]
 
 def calculer_prix_moyen_par_quartier(trajets):
     """
@@ -404,8 +529,29 @@ def calculer_prix_moyen_par_quartier(trajets):
         -> {"Bacongo": 500}
         (moyenne de 500, 400 et 600 = 500)
     """
-    # TODO : à compléter
-    pass
+    # Initialisation de deux dictionnaires pour stocker la somme des prix et le nombre de trajets par quartier.
+    somme_prix = {}
+    compteur_trajets = {}
+
+    # On parcourt tous les trajets reçus en paramètre.
+    for trajet in trajets:
+        quartier = trajet["quartier_depart"]
+        prix = trajet["prix_place"]
+
+        # On ajoute le prix à la somme pour ce quartier.
+        if quartier in somme_prix:
+            somme_prix[quartier] += prix
+            compteur_trajets[quartier] += 1
+        else:
+            somme_prix[quartier] = prix
+            compteur_trajets[quartier] = 1
+
+    # On calcule le prix moyen par quartier et on arrondit le résultat.
+    prix_moyen_par_quartier = {quartier: round(somme_prix[quartier] / compteur_trajets[quartier])
+                               for quartier in somme_prix}
+
+    # On retourne le dictionnaire contenant le prix moyen par quartier.
+    return prix_moyen_par_quartier
 
 
 def identifier_trajet_le_plus_reserve(trajets, reservations):
@@ -445,8 +591,43 @@ def identifier_trajet_le_plus_reserve(trajets, reservations):
         identifier_trajet_le_plus_reserve(trajets, reservations)
         -> {"trajet_id": 1, "trajet_libelle": "Bacongo → Poto-Poto", "nombre_reservations": 2}
     """
-    # TODO : à compléter
-    pass
+    # Initialisation d'un dictionnaire pour compter les réservations actives par trajet.
+    compteur_reservations = {}
+
+    # On parcourt toutes les réservations reçues en paramètre.
+    for reservation in reservations:
+        trajet_id = reservation["trajet_id"]
+        statut = reservation["statut"]
+
+        # On ne compte que les réservations actives (effectue ou en_attente).
+        if statut in ["effectue", "en_attente"]:
+            if trajet_id in compteur_reservations:
+                compteur_reservations[trajet_id] += 1
+            else:
+                compteur_reservations[trajet_id] = 1
+
+    # Si aucune réservation active n'existe, on retourne None.
+    if not compteur_reservations:
+        return None
+
+    # On identifie le trajet avec le plus de réservations actives.
+    trajet_max_id = min(
+        (trajet_id for trajet_id, count in compteur_reservations.items() if count == max(compteur_reservations.values())),
+        default=None
+    )
+
+    # On récupère le trajet correspondant à l'ID trouvé.
+    trajet_max = next((t for t in trajets if t["id"] == trajet_max_id), None)
+
+    # On construit le libellé du trajet.
+    trajet_libelle = f"{trajet_max['quartier_depart']} → {trajet_max['quartier_arrivee']}"
+
+    # On retourne le dictionnaire avec les informations du trajet le plus réservé.
+    return {
+        "trajet_id": trajet_max_id,
+        "trajet_libelle": trajet_libelle,
+        "nombre_reservations": compteur_reservations[trajet_max_id]
+    }
 
 
 def calculer_indicateurs_dashboard(trajets, reservations, conducteurs):
@@ -489,8 +670,28 @@ def calculer_indicateurs_dashboard(trajets, reservations, conducteurs):
             "note_moyenne_conducteurs": 4.7
         }
     """
-    # TODO : à compléter
-    pass
+    # Calcul du nombre total de trajets disponibles (places_dispo >= 1).
+    total_trajets_disponibles = sum(1 for trajet in trajets if trajet["places_dispo"] >= 1)
+
+    # Calcul du nombre total de conducteurs actifs.
+    total_conducteurs_actifs = len(conducteurs)
+
+    # Calcul du nombre total de réservations actives (statut "effectue" ou "en_attente").
+    total_reservations_actives = sum(1 for reservation in reservations if reservation["statut"] in ["effectue", "en_attente"])
+
+    # Calcul de la note moyenne des conducteurs.
+    if conducteurs:
+        note_moyenne_conducteurs = round(sum(conducteur["note"] for conducteur in conducteurs) / len(conducteurs), 1)
+    else:
+        note_moyenne_conducteurs = 0.0
+
+    # Retourne le dictionnaire avec les indicateurs calculés.
+    return {
+        "total_trajets_disponibles": total_trajets_disponibles,
+        "total_conducteurs_actifs": total_conducteurs_actifs,
+        "total_reservations_actives": total_reservations_actives,
+        "note_moyenne_conducteurs": note_moyenne_conducteurs
+    }
 
 
 # ========================================================================
@@ -515,8 +716,15 @@ def verifier_telephone_disponible(comptes, telephone):
         verifier_telephone_disponible(comptes, "066123456") -> False
         verifier_telephone_disponible(comptes, "055999999") -> True
     """
-    # TODO : à compléter
-    pass
+    # On parcourt tous les comptes reçus en paramètre.
+    for compte in comptes:
+        # On vérifie si le numéro de téléphone du compte correspond au numéro recherché.
+        if compte["telephone"] == telephone:
+            # Si oui, le téléphone n'est pas disponible, on retourne False.
+            return False
+
+    # Si aucun compte n'a ce téléphone, on retourne True.
+    return True
 
 
 def trouver_compte_par_telephone(comptes, telephone):
@@ -539,5 +747,12 @@ def trouver_compte_par_telephone(comptes, telephone):
         -> {"id": 1, "telephone": "066123456", "nom": "Franck"}
         trouver_compte_par_telephone(comptes, "055999999") -> None
     """
-    # TODO : à compléter
-    pass
+    # On parcourt tous les comptes reçus en paramètre.
+    for compte in comptes:
+        # On vérifie si le numéro de téléphone du compte correspond au numéro recherché.
+        if compte["telephone"] == telephone:
+            # Si oui, on retourne le compte correspondant.
+            return compte
+
+    # Si aucun compte ne correspond, on retourne None.
+    return None
