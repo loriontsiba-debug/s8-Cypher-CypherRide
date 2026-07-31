@@ -94,6 +94,8 @@ function formaterHeure(heure) {
 // ============================================================================
 
 function validerFormulaireProposer(formulaire) {
+
+    
     /**
      * Valide le formulaire de proposition de trajet.
      * @param {Object} formulaire - avec les clés : quartier_depart,
@@ -110,6 +112,11 @@ function validerFormulaireProposer(formulaire) {
 }
 
 function formaterMessageConfirmation(nom, quartierDepart, quartierArrivee, heure) {
+    this.nom = nom;
+    this.quartierDepart =quartierDepart;
+    this.quartierArrivee = quartierArrivee;
+    this.heure = heure;
+    return `Bonjour ${nom}, votre réservation pour ${quartierDepart}→${quartierArrivee} à ${heure} a été enregistrée`;
     /**
      * Génère le message de confirmation après réservation.
      * @return {string} - message formaté
@@ -119,7 +126,6 @@ function formaterMessageConfirmation(nom, quartierDepart, quartierArrivee, heure
      */
     // TODO
 }
-
 // ============================================================================
 // Dev FS5 — page Mes trajets
 // ============================================================================
