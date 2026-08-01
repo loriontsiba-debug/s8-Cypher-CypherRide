@@ -96,6 +96,7 @@ function formaterHeure(heure) {
 // ============================================================================
 
 function validerFormulaireProposer(formulaire) {
+  // <<<<<<< HEAD
   /**
    * Valide le formulaire de proposition de trajet.
    * @param {Object} formulaire - avec les clés : quartier_depart,
@@ -125,8 +126,43 @@ function formaterMessageConfirmation(
    *   → "Bonjour Marie, votre réservation pour Bacongo → Poto-Poto à 07:30 a été enregistrée."
    */
   // TODO
+  // =======
+  /**
+   * Valide le formulaire de proposition de trajet.
+   * @param {Object} formulaire - avec les clés : quartier_depart,
+   *   quartier_arrivee, heure, places_dispo, prix_place
+   * @return {Object} - {valide: true/false, erreurs: [liste de messages]}
+   *
+   * Règles :
+   * - quartier_depart et quartier_arrivee obligatoires et différents
+   * - heure obligatoire au format "HH:MM"
+   * - places_dispo entre 1 et 8
+   * - prix_place > 0
+   */
+  // TODO
 }
 
+function formaterMessageConfirmation(
+  nom,
+  quartierDepart,
+  quartierArrivee,
+  heure,
+) {
+  this.nom = nom;
+  this.quartierDepart = quartierDepart;
+  this.quartierArrivee = quartierArrivee;
+  this.heure = heure;
+  return `Bonjour ${nom}, votre réservation pour ${quartierDepart}→${quartierArrivee} à ${heure} a été enregistrée`;
+  /**
+   * Génère le message de confirmation après réservation.
+   * @return {string} - message formaté
+   * Exemple :
+   *   formaterMessageConfirmation("Marie", "Bacongo", "Poto-Poto", "07:30")
+   *   → "Bonjour Marie, votre réservation pour Bacongo → Poto-Poto à 07:30 a été enregistrée."
+   */
+  // TODO
+  // >>>>>>> 1d172945453d47c9dd59b3b2ff15aacc3b4224ab
+}
 // ============================================================================
 // Dev FS5 — page Mes trajets
 // ============================================================================

@@ -1,11 +1,12 @@
-body {
+* {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: weight;
   font-style: normal;
+}
+body {
   background-color: #d1c5b344;
 }
-
 .entete-trajet {
   width: 500px;
   height: 150px;
