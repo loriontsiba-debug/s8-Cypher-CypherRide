@@ -78,6 +78,8 @@ function formaterPrix(prix) {
      * Exemple : formaterPrix(500) → "500 FCFA", formaterPrix(1500) → "1 500 FCFA"
      */
     // TODO
+}
+
 function formaterHeure(heure) {
     /**
      * Formate une heure au format "HHhMM" à partir d'une heure "HH:MM".
@@ -140,10 +142,6 @@ function validerFormulaireProposer(formulaire) {
 }
 
 function formaterMessageConfirmation(nom, quartierDepart, quartierArrivee, heure) {
-    this.nom = nom;
-    this.quartierDepart =quartierDepart;
-    this.quartierArrivee = quartierArrivee;
-    this.heure = heure;
     return `Bonjour ${nom}, votre réservation pour ${quartierDepart}→${quartierArrivee} à ${heure} a été enregistrée`;
     /**
      * Génère le message de confirmation après réservation.
