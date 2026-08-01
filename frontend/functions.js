@@ -78,8 +78,6 @@ function formaterPrix(prix) {
      * Exemple : formaterPrix(500) → "500 FCFA", formaterPrix(1500) → "1 500 FCFA"
      */
     // TODO
-}
-
 function formaterHeure(heure) {
     /**
      * Formate une heure au format "HHhMM" à partir d'une heure "HH:MM".
