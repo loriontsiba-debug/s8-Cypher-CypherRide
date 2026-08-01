@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BraCovoit — Recherche</title>
-  <link rel="stylesheet" href="recherche.css">
-</head>
-<body id="page-recherche">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BraCovoit — Recherche</title>
+    <link rel="stylesheet" href="recherche.css" />
+  </head>
+  <body id="page-recherche">
+    <!-- NAVIGATION — TODO (Dev FS2) -->
 
-  <!-- NAVIGATION — TODO (Dev FS2) -->
+    <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+    <div id="nav-session"></div>
 
-  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <div id="nav-session"></div>
-
-  <main>
-    <!-- =====================================================================
+    <main>
+      <h2>Rechercher un trajet</h2>
+      <!-- =====================================================================
          FILTRES — TODO (Dev FS2)
          Mettre en forme la barre de filtres : sélecteur de quartier de
          départ, champ de recherche libre, bouton de lancement. Layout en
@@ -22,13 +22,49 @@
 
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
-    <section class="barre-filtres">
-      <select id="filtre-depart"></select>
-      <input type="text" id="champ-recherche" placeholder="Rechercher un quartier, un mot-clé...">
-      <button id="btn-rechercher">Rechercher</button>
-    </section>
+      <section class="barre-filtres">
+        <div class="filtres-ligne-1">
+          <div class="input-groupe">
+            <label>point de départ</label>
+            <input type="text" placeholder="Départ" />
+            <input type="text" placeholder="Destination" />
+          </div>
+          <div class="input-groupe">
+            <label>Heure</label>
+            <select>
+              <option>Toute la journée</option>
+              <option>Matin 7h-9h</option>
+              <option>soir 17-19H</option>
+            </select>
+          </div>
+        </div>
+        <div class="filtres-ligne-2">
+          <select id="filtre-depart">
+            <option value="">Tous les quartiers</option>
+            <option value="bacongo">Bacongo</option>
+            <option value="poto-poto">Poto-Poto</option>
+            <option value="moungali">Moungali</option>
+            <option value="talangai">Talangai</option>
+            <option value="mfilou">Mfilou</option>
+            <option value="makélékélé">Makélékélé</option>
+            <option value="ouneze">Ounezé</option>
+            <option value="kintele">Kintele</option>
+          </select>
+          <div class="champ-recherche-groupe">
+            <span>recherche</span>
+            <input
+              type="text"
+              id="champ-recherche"
+              placeholder="Mots-clés (quartier, conducteur, etc.)"
+            />
+          </div>
+          <button id="btn-rechercher">Rechercher</button>
+        </div>
+      </section>
 
-    <!-- =====================================================================
+      <p class="sous-titre">Tous les trajets disponibles aujourd'hui</p>
+
+      <!-- =====================================================================
          RÉSULTATS — TODO (Dev FS2)
          main.js remplit ce conteneur avec des cartes .carte-trajet, chacune
          contenant un <h3>, un <p class="heure">, un <p class="conducteur">,
@@ -41,13 +77,13 @@
 
          *** NE PAS MODIFIER l'id ci-dessous ***
          ===================================================================== -->
-    <section id="liste-trajets"></section>
-  </main>
+      <section id="liste-trajets"></section>
+    </main>
 
-  <div id="erreur-globale" hidden></div>
+    <div id="erreur-globale" hidden></div>
 
-  <!-- NE PAS MODIFIER -->
-  <script src="../functions.js"></script>
-  <script src="../main.js"></script>
-</body>
+    <!-- NE PAS MODIFIER -->
+    <script src="../functions.js"></script>
+    <script src="../main.js"></script>
+  </body>
 </html>
