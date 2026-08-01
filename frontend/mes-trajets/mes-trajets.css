@@ -1,0 +1,89 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  /* background-color: #f3f3d1; */
+  background-color: #d1c5b344;
+}
+
+.barre-recherche-tel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 390px;
+  height: 300px;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 1px solid black;
+}
+
+.barre-recherche-tel input,
+button,
+select {
+  height: 25px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.barre-recherche-tel button {
+  color: #2e7d32;
+  background-color: #ffffff;
+  width: 125px;
+}
+.barre-recherche-tel button:hover {
+  color: #ffffff;
+  background-color: #2e7d32;
+  width: 130px;
+}
+.total-depense {
+  width: 450px;
+  justify-content: center;
+  margin: auto;
+  height: 20px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+#mt-total {
+  color: #ff401efa;
+  font-weight: 800;
+}
+
+/* #mt-liste {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+} */
+#mt-liste {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: row;
+  gap: 10px;
+  justify-items: center;
+  border: 1px solid black;
+}
+.statut-effectue {
+  color: green;
+  background-color: #c6ebc8;
+  padding: 8px;
+  border-radius: 8px;
+}
+.statut-en_attente {
+  color: rgb(92, 91, 17);
+  background-color: yellow;
+  padding: 8px;
+  border-radius: 8px;
+}
+.statut-annule {
+  color: red;
+  background-color: rgb(223, 200, 200);
+  padding: 8px;
+  border-radius: 8px;
+}
