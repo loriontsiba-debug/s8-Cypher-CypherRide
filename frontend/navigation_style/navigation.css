@@ -72,6 +72,54 @@ body {
     margin-left: 12px;
 }
 
+#nav-session {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#nav-session a,
+#nav-session button {
+    padding: 10px 20px;
+    border-radius: var(--taille-radius);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+#nav-session a:first-child {
+    background: var(--couleur-white);
+    border-color: var(--couleur-border);
+    color: var(--couleur-text);
+}
+
+#nav-session a:first-child:hover {
+    background: #FAFAFA;
+}
+
+#nav-session a:last-child {
+    background: var(--couleur-orange);
+    color: var(--couleur-white);
+}
+
+#nav-session a:last-child:hover {
+    background: var(--couleur-orange-dark);
+}
+
+#nav-session button {
+    background: var(--couleur-white);
+    border-color: var(--couleur-border);
+    color: var(--couleur-text);
+}
+
+#nav-session button:hover {
+    background: #FAFAFA;
+}
+
 .btn {
   padding: 10px 20px;
   border-radius: var(--taille-radius);
