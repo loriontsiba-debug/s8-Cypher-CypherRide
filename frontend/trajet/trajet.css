@@ -1,25 +1,26 @@
+:root {
+  --couleur-o: rgb(255, 123, 0);
+  --couleur-o-d: rgba(235, 113, 0, 0.774);
+}
+
 * {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: weight;
   font-style: normal;
-}
-body {
-  background-color: #d1c5b344;
-  text-align: center;
+  font-weight: 700;
 }
 
+main {
+  margin-top: 50px;
+  text-align: center;
+}
 .entete-trajet {
   width: 500px;
   height: 150px;
   margin: auto;
   text-align: left;
   padding: 10px;
-  background: linear-gradient(
-    to right,
-    rgb(255, 123, 0),
-    rgba(235, 113, 0, 0.774)
-  );
+  background: linear-gradient(to right, var(--couleur-o), var(--couleur-o-d));
   margin-bottom: 10px;
   border-radius: 20px;
   color: white;
@@ -31,7 +32,7 @@ body {
   width: 500px;
   height: 200px;
   text-align: left;
-  background-color: white;
+  background-color: #d1c5b344;
   color: #2c2a29;
   padding: 10px;
   margin: auto;
@@ -45,7 +46,7 @@ body {
   width: 500px;
   height: 150px;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: #d1c5b344;
   padding: 20px;
   border-radius: 20px;
   text-align: left;
@@ -57,24 +58,31 @@ body {
   border-radius: 5px;
 }
 #form-reservation button {
-  height: 35px;
+  height: 40px;
   margin: auto;
   width: 50%;
   border-radius: 10px;
   font-weight: 700;
   font-size: 15px;
-  color: rgb(255, 123, 0);
+  color: var(--couleur-orange);
   background-color: #ffffff;
 }
 #form-reservation button:hover {
   color: #ffffff;
-  background-color: rgb(255, 123, 0);
+  background-color: var(--couleur-o);
   cursor: pointer;
 }
-
 #erreurs-form {
   color: #ffffff;
-  background-color: #b71c1c;
+  background-color: gold;
+  /* display: flex; */
+  justify-content: center;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  padding-top: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 #erreur-globale {
@@ -84,7 +92,6 @@ body {
   height: 30px;
   margin: auto;
   text-align: center;
-  align-items: left;
   padding-top: 10px;
   border-radius: 10px;
   margin-top: 10px;
