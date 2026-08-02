@@ -1,0 +1,120 @@
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+body {
+  background-color: #d1c5b344;
+}
+main {
+  text-align: center;
+}
+.barre-recherche-tel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 250px;
+  height: 200px;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.barre-recherche-tel input,
+button,
+select {
+  height: 25px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.barre-recherche-tel button {
+  color: #2e7d32;
+  background-color: #ffffff;
+  width: 125px;
+}
+.barre-recherche-tel button:hover {
+  color: #ffffff;
+  background-color: #2e7d32;
+  width: 130px;
+}
+.total-depense {
+  width: 450px;
+  justify-content: center;
+  margin: auto;
+  height: 20px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+#mt-total {
+  color: #ff401efa;
+  font-weight: 800;
+}
+
+#mt-liste {
+  display: flex;
+  flex-direction: column;
+}
+
+.statut-effectue {
+  color: green;
+  background-color: #c6ebc8;
+  padding: 8px;
+  border-radius: 8px;
+}
+.statut-en_attente {
+  color: rgb(92, 91, 17);
+  background-color: yellow;
+  padding: 8px;
+  border-radius: 8px;
+}
+.statut-annule {
+  color: red;
+  background-color: rgb(223, 200, 200);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* ------------------------------------------
+          MEDIA QUERIES
+------------------------------------------ */
+@media only screen and (max-width: 1280px) {
+  .barre-recherche-tel {
+    /* width: 70%; 
+    height: auto; */
+    width: 390px;
+    height: 300px;
+  }
+  .total-depense {
+    width: 50%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .barre-recherche-tel {
+    width: 350px;
+    height: 300px;
+  }
+  .total-depense {
+    width: 50%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .barre-recherche-tel {
+    width: 250px;
+    height: 200px;
+  }
+  .total-depense {
+    width: 70%;
+    height: auto;
+  }
+}
