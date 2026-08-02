@@ -1,0 +1,408 @@
+:root {
+  --primary-orange: #d9531e;
+  --primary-hover: #c24413;
+  --bg-cream: #f6f4ee;
+  --card-bg: #ffffff;
+  --text-dark: #1f2937;
+  --text-muted: #8c8c8c;
+  --border-color: #eee9e0;
+  --input-bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Navbar */
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background-color: var(--bg-cream);
+  position: relative;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  background-color: var(--primary-orange);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--primary-orange);
+}
+
+/* Container du menu (liens + boutons) */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--primary-orange);
+}
+
+/* Styles automatiques pour le contenu dynamique injecté par main.js */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+/* Stylise le 1er lien injecté (ex: Se connecter) */
+.nav-actions a:first-child,
+.btn-secondary {
+  border: 1px solid #e0dbd1;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 13px;
+  font-weight: 500;
+  background: #fff;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Stylise le 2ème lien injecté (ex: S'inscrire) */
+.nav-actions a:last-child,
+.btn-primary {
+  background-color: var(--primary-orange);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Stylise le bouton Déconnexion s'il est présent */
+.nav-actions button,
+.nav-actions #btn-deconnexion {
+  border: 1px solid #e0dbd1;
+  padding: 8px 18px;
+  border-radius: 20px;
+  color: var(--text-dark);
+  font-size: 13px;
+  font-weight: 500;
+  background: #fff;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* Bouton Burger (Masqué sur PC) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+}
+
+.menu-toggle .bar {
+  height: 2px;
+  width: 100%;
+  background-color: var(--text-dark);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Auth Card Layout */
+.auth-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.auth-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 440px;
+  padding: 36px 32px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.auth-logo-badge {
+  background-color: var(--primary-orange);
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin: 0 auto 16px auto;
+  font-size: 20px;
+}
+
+.auth-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.auth-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+/* Boutons Passager / Conducteur */
+.role-selector {
+  display: flex;
+  background-color: #f3efe6;
+  padding: 4px;
+  border-radius: 24px;
+  margin-bottom: 16px;
+  gap: 4px;
+}
+
+.role-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.role-btn.active {
+  background-color: var(--primary-orange);
+  color: white;
+}
+
+/* Form inputs */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-row input,
+.form-group input {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  font-size: 13px;
+  outline: none;
+  background-color: #fff;
+  color: var(--text-dark);
+}
+
+.form-row input:focus,
+.form-group input:focus {
+  border-color: var(--primary-orange);
+}
+
+.form-row input::placeholder,
+.form-group input::placeholder {
+  color: #bbb;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: -2px;
+}
+
+.forgot-password a {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-orange);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Footer & Notes */
+.auth-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.auth-footer a {
+  color: var(--primary-orange);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.demo-note {
+  margin-top: 20px;
+  font-size: 11px;
+  color: #aaa;
+}
+
+.alert-error,
+.alert-error-global {
+  margin-top: 14px;
+  padding: 10px;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVE & BURGER MENU)
+   ========================================== */
+
+@media (max-width: 768px) {
+  .header-nav {
+    padding: 16px 20px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-cream);
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    display: none;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .nav-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav-actions a,
+  .btn-secondary,
+  .btn-primary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 20px 16px;
+  }
+
+  .auth-card {
+    padding: 24px 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
