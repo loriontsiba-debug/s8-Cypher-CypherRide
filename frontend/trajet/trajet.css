@@ -16,7 +16,7 @@ main {
 }
 .entete-trajet {
   width: 500px;
-  height: 150px;
+  height: 250px;
   margin: auto;
   text-align: left;
   padding: 10px;
@@ -24,6 +24,10 @@ main {
   margin-bottom: 10px;
   border-radius: 20px;
   color: white;
+}
+#trajet-titre {
+  font-size: 30px;
+  font-weight: 700;
 }
 .entete-trajet span {
   font-weight: 700;
