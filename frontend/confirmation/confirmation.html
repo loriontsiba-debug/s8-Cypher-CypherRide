@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BraCovoit — Confirmation</title>
   <link rel="stylesheet" href="confirmation.css">
-  <link rel="stylesheet" href="../navigation_style/navigation.css">
+  <link rel="stylesheet" href="../navigation_style/navigation.css"
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body id="page-confirmation">
 
   <header class="site-header">
@@ -14,6 +17,7 @@
       <a href="../../index.html">
         <img src="../images/logo.jpg" width="250" alt="BraCovoit logo">
       </a>
+
 
       <button class="burger-btn" id="burgerBtn" aria-label="ouvrir le menu">
         <span></span>
@@ -33,6 +37,61 @@
         </div>
       </nav>
     </div>
+
+  <header class="nav-bar">
+
+    <div class="logo">
+      <h1>Bra<span>Covoit</span></h1>
+    </div>
+
+
+    <nav class="liens">
+
+      <ul>
+
+        <li>
+          <a href="../accueil/index.html">
+            Accueil
+          </a>
+        </li>
+
+
+        <li>
+          <a href="../recherche/recherche.html">
+            Rechercher
+          </a>
+        </li>
+
+
+        <li>
+          <a href="../proposer-trajet/proposer.html">
+            Proposer un trajet
+          </a>
+        </li>
+
+
+        <li>
+          <a href="../mes-trajets/mes-trajets.html">
+            Mes trajets
+          </a>
+        </li>
+
+        <li>
+          <a href="../dashboard/dashboard.html">
+            Dashboard
+          </a>
+        </li>
+
+
+      </ul>
+
+    </nav>
+
+
+    <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+    <div id="nav-session"></div>
+
+
   </header>
 
   <main>
@@ -44,22 +103,46 @@
          *** NE PAS MODIFIER l'id — main.js injecte le message ***
          ===================================================================== -->
     <section class="bloc-confirmation">
-      <h1>Merci !</h1>
+
+      <div class="icone-success">
+        ✓
+      </div>
+
+      <h2>Merci !</h2>
+
       <p id="confirmation-message"></p>
+
     </section>
 
     <!-- PROCHAINES ÉTAPES — TODO (Dev FS6) : mettre en forme ces 3 liens
          (boutons ou cartes de navigation).
          NE PAS MODIFIER les href/id des liens. -->
+
     <section class="prochaines-etapes">
+
       <h2>Prochaines étapes</h2>
-      <a href="../../index.html">Retour à l'accueil</a>
-      <a id="lien-mes-trajets" href="../mes-trajets/mes-trajets.html">Voir mes trajets</a>
-      <a href="../recherche/recherche.html">Rechercher d'autres trajets</a>
+
+      <div class="actions">
+        <a href="../accueil/index.html">
+          Retour à l'accueil
+        </a>
+
+        <a id="lien-mes-trajets" href="../mes-trajets/mes-trajets.html">
+          Voir mes trajets
+        </a>
+
+        <a href="../recherche/recherche.html">
+          Rechercher d'autres trajets
+        </a>
+
+      </div>
+
+
     </section>
   </main>
 
   <script src="../functions.js"></script>
   <script src="../main.js"></script>
 </body>
+
 </html>

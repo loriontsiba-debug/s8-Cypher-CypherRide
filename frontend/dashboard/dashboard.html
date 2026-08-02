@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BraCovoit — Tableau de bord</title>
   <link rel="stylesheet" href="dashboard.css">
-  <link rel="stylesheet" href="../navigation_style/navigation.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body id="page-dashboard">
+
 
   <header class="site-header">
     <div class="header-inner">
@@ -32,10 +35,43 @@
           <div id="nav-session"></div>
         </div>
       </nav>
+
+  <!-- NAVIGATION — TODO (Dev FS6) -->
+  <header class="nav-bar">
+
+    <div class="logo">
+      <h1>Bra<span>Covoit</span></h1>
+
     </div>
+
+    <nav class="liens">
+      <ul>
+        <li><a href="../accueil/index.html">Accueil</a></li>
+        <li><a href="../recherche/recherche.html">Rechercher</a></li>
+        <li><a href="../proposer-trajet/proposer.html">Proposer un trajet</a></li>
+        <li><a href="../mes-trajets/mes-trajets.html">Mes trajets</a></li>
+        <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+
+    <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+    <div id="nav-session"></div>
   </header>
 
+
   <main>
+=======
+  <main class="container">
+
+    <section class="dashboard-entete">
+      <div class="dashboard-titre">
+        <h2>Dashboard</h2>
+        <p class="subtitle">Vue d'ensemble — Brazzaville, 31 juillet 2026</p>
+      </div>
+      <span class="badge-actif">● Plateforme active</span>
+    </section>
+
+
     <!-- =====================================================================
          CARTES INDICATEURS — TODO (Dev FS6)
          5 cartes chiffres clés. Layout : Grid responsive (1 colonne mobile,
@@ -44,11 +80,36 @@
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
     <section class="grille-indicateurs">
-      <div class="carte-indicateur"><p class="label">Trajets disponibles</p><p id="d-trajets" class="valeur"></p></div>
-      <div class="carte-indicateur"><p class="label">Conducteurs actifs</p><p id="d-conducteurs" class="valeur"></p></div>
-      <div class="carte-indicateur"><p class="label">Réservations actives</p><p id="d-reservations" class="valeur"></p></div>
-      <div class="carte-indicateur"><p class="label">Note moyenne</p><p id="d-note" class="valeur"></p></div>
-      <div class="carte-indicateur"><p class="label">Taux d'annulation</p><p id="d-taux-annulation" class="valeur"></p></div>
+
+      <div class="carte-indicateur">
+        <div class="icon-box bg-orange-light">📅</div>
+        <p class="label">Trajets disponibles</p>
+        <p id="d-trajets" class="valeur"></p>
+      </div>
+
+      <div class="carte-indicateur">
+        <div class="icon-box bg-green-light">👤</div>
+        <p class="label">Conducteurs actifs</p>
+        <p id="d-conducteurs" class="valeur"></p>
+      </div>
+
+      <div class="carte-indicateur">
+        <div class="icon-box bg-green-light">📌</div>
+        <p class="label">Réservations actives</p>
+        <p id="d-reservations" class="valeur"></p>
+      </div>
+
+      <div class="carte-indicateur">
+        <div class="icon-box bg-yellow-light">★</div>
+        <p class="label">Note moyenne</p>
+        <p id="d-note" class="valeur"></p>
+      </div>
+
+      <div class="carte-indicateur">
+        <div class="icon-box bg-pink-light">✕</div>
+        <p class="label">Taux d'annulation</p>
+        <p id="d-taux-annulation" class="valeur"></p>
+      </div>
     </section>
 
     <!-- =====================================================================
@@ -59,16 +120,39 @@
 
          *** NE PAS MODIFIER l'id ***
          ===================================================================== -->
-    <section>
-      <h2>Top 3 conducteurs</h2>
+    <section class="top-conducteurs">
+      <h2 class="carte-titre">🏆 Top 3 conducteurs</h2>
       <ol id="d-top-conducteurs"></ol>
     </section>
 
     <!-- TRAJET VEDETTE — TODO (Dev FS6) : mettre en avant visuellement
          ce trajet (encart distinctif).
          *** NE PAS MODIFIER l'id *** -->
-    <section>
-      <h2>Trajet vedette</h2>
+    <section class="trajet-vedette">
+      <h2>🔥 Trajet vedette</h2>
+<div class="trajet">
+
+    <div class="depart">
+        <p class="titre">Départ</p>
+        <h3>Bacongo</h3>
+        <p>🕒 07:30</p>
+        <p>💰 500 FCFA</p>
+    </div>
+
+    <div class="fleche">
+        →
+    </div>
+
+    <div class="arrivee">
+        <p class="titre">Arrivée</p>
+        <h3>Plateau des 15 ans</h3>
+        <p>👥 127 réservations</p>
+    </div>
+
+</div>
+
+
+
       <p id="d-trajet-top"></p>
     </section>
 
@@ -79,12 +163,20 @@
 
          *** NE PAS MODIFIER l'id ***
          ===================================================================== -->
-    <section>
-      <h2>Répartition par quartier de départ</h2>
-      <table>
-        <thead><tr><th>Quartier</th><th>Nombre de trajets</th><th>Prix moyen</th></tr></thead>
-        <tbody id="d-trajets-par-quartier"></tbody>
-      </table>
+    <section class="quartiers">
+      <h2>💰 Répartition par quartier de départ</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Quartier</th>
+              <th>Nombre de trajets</th>
+              <th>Prix moyen</th>
+            </tr>
+          </thead>
+          <tbody id="d-trajets-par-quartier"></tbody>
+        </table>
+      </div>
     </section>
   </main>
 
@@ -100,4 +192,5 @@
   <script src="../main.js"></script>
   <script src="../navigation_style/script.js"></script>
 </body>
+
 </html>
