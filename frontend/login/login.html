@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BraCovoit — Connexion</title>
   <link rel="stylesheet" href="login.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="../navigation_style/navigation.css">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
 </head>
 <body id="page-login">
 
@@ -24,20 +25,15 @@
       <span class="bar"></span>
     </button>
 
-
-        <div class="header-actions">
-          <div id="nav-session"></div>
-        </div>
-
     <!-- Conteneur pliable du menu -->
     <div class="nav-menu" id="navMenu">
       <nav class="nav-links">
-            <a href="../../index.html" class="nav-link active">Accueil</a>
-            <a href="frontend/recherche/recherche.html" class="nav-link">Rechercher</a>
-            <a href="frontend/proposer/proposer.html" class="nav-link">Proposer un trajet</a>
-            <a href="frontend/mes-trajets/mes-trajets.html" class="nav-link">Mes trajets</a>
-            <a href="frontend/dashboard/dashboard.html" class="nav-link">Dashboard</a>
 
+        <a href="../accueil/index.html">Accueil</a>
+        <a href="../recherche/recherche.html">Rechercher</a>
+        <a href="../proposer/proposer.html">Proposer un trajet</a>
+        <a href="../mes-trajets/mes-trajets.html">Mes trajets</a>
+        <a href="../dashboard/dashboard.html">Dashboard</a>
       </nav>
       
       <!-- L'id nav-session est placé ici pour recevoir le contenu injecté par main.js -->
@@ -51,7 +47,12 @@
          FORMULAIRE — TODO (Dev FS7)
          Mettre en forme le formulaire de connexion : téléphone, mot de
          passe. Prévoir un layout clair en colonne, avec des labels
+
+         visibles pour chaque champ.
+      <!--Zone d'erreurs -->
+
          visibles pour chaque champ.<!-- Zone d'erreurs -->
+
 
   <main class="auth-container">
     <div class="auth-card text-center">
@@ -75,6 +76,9 @@
 
         <button type="submit" class="btn-submit">Se connecter</button>
       </form>
+
+    
+
 
       
       <div id="erreurs-form" hidden class="alert-error"></div>
