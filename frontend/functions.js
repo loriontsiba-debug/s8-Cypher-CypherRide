@@ -52,6 +52,7 @@ function filtrerParQuartierDepart(trajets, quartier) {
    * Si quartier est vide ou null, retourne tous les trajets.
    */
   // TODO
+
   if (!quartier) {
     return trajets;
   }
@@ -70,6 +71,7 @@ function rechercherParMotCle(trajets, motCle) {
    * Si motCle est vide, retourne tous les trajets.
    */
   // TODO
+
   if (!motCle) {
     return trajets;
   }
@@ -94,6 +96,8 @@ function formaterPrix(prix) {
    * Exemple : formaterPrix(500) → "500 FCFA", formaterPrix(1500) → "1 500 FCFA"
    */
   // TODO
+
+  return prix.toLocaleString("fr-FR") + "FCFA";
 }
 
 function formaterHeure(heure) {
@@ -103,6 +107,8 @@ function formaterHeure(heure) {
    * @return {string} - "07h30"
    */
   // TODO
+
+  return heure.replace(":", "h");
 }
 
 // ============================================================================
@@ -110,63 +116,132 @@ function formaterHeure(heure) {
 // ============================================================================
 
 function validerFormulaireProposer(formulaire) {
-        
-        let erreurs = [];//on crée un tableau des erreurs(une liste vide pour mettre les erreurs)
-        //ce code verifie le quartier de depart
-        //on demande es ce que le quartier de depart est vide ou null(absent)
-        if (!formulaire.quartier_depart){
-            erreurs.push("quartier de depart obligatoire")//si une erreur est trouver elle renvoie ce message et l'ajoute dans le tableau
-        }
-        //ce code verifie le quartier d'arriver
-        
-        if(!formulaire.quartier_arrivee){
-            erreurs.push("quartier d'arrivé obligatoire")
-        }
-        //ce code verifie les quartiers sont different
-        if(formulaire.quartier_depart === formulaire.quartier_arrivee){
-            erreurs.push("quartier doivent etre different")
-        }
-        //ce code verifie l'heure pas le formet 
-        if(!formulaire.heure){
-            erreurs.push("l'heure est obligatoire");
-        }
-        //ce code verifie le nombre de place
-        if(formulaire. places_dispo < 1 || formulaire.places_dispo >8){
-            erreurs.push("le nombre  de place doit etre compris entre 1 et 8 ");
-        }
-        //ce code verifie le prix saisie doti etre inferieur à 0
-        if(formulaire.prix_place <=0){
-            erreurs.push("le prix doit être superieure à 0");
-        }
-        return{
-            valide: erreurs.length === 0,
-            erreurs: erreurs
-        };
-    /**
-     * Valide le formulaire de proposition de trajet.
-     * @param {Object} formulaire - avec les clés : quartier_depart,
-     *   quartier_arrivee, heure, places_dispo, prix_place
-     * @return {Object} - {valide: true/false, erreurs: [liste de messages]}
-     *
-     * Règles :
-     * - quartier_depart et quartier_arrivee obligatoires et différents
-     * - heure obligatoire au format "HH:MM"
-     * - places_dispo entre 1 et 8
-     * - prix_place > 0
-     */
-    // TODO
+  let erreurs = []; //on crée un tableau des erreurs(une liste vide pour mettre les erreurs)
+  //ce code verifie le quartier de depart
+  //on demande es ce que le quartier de depart est vide ou null(absent)
+  if (!formulaire.quartier_depart) {
+    erreurs.push("quartier de depart obligatoire"); //si une erreur est trouver elle renvoie ce message et l'ajoute dans le tableau
+  }
+  //ce code verifie le quartier d'arriver
+
+  if (!formulaire.quartier_arrivee) {
+    erreurs.push("quartier d'arrivé obligatoire");
+  }
+  //ce code verifie les quartiers sont different
+  if (formulaire.quartier_depart === formulaire.quartier_arrivee) {
+    erreurs.push("quartier doivent etre different");
+  }
+  //ce code verifie l'heure pas le formet
+  if (!formulaire.heure) {
+    erreurs.push("l'heure est obligatoire");
+  }
+  //ce code verifie le nombre de place
+  if (formulaire.places_dispo < 1 || formulaire.places_dispo > 8) {
+    erreurs.push("le nombre  de place doit etre compris entre 1 et 8 ");
+  }
+  //ce code verifie le prix saisie doti etre inferieur à 0
+  if (formulaire.prix_place <= 0) {
+    erreurs.push("le prix doit être superieure à 0");
+  }
+  return {
+    valide: erreurs.length === 0,
+    erreurs: erreurs,
+  };
+  /**
+   * Valide le formulaire de proposition de trajet.
+   * @param {Object} formulaire - avec les clés : quartier_depart,
+   *   quartier_arrivee, heure, places_dispo, prix_place
+   * @return {Object} - {valide: true/false, erreurs: [liste de messages]}
+   *
+   * Règles :
+   * - quartier_depart et quartier_arrivee obligatoires et différents
+   * - heure obligatoire au format "HH:MM"
+   * - places_dispo entre 1 et 8
+   * - prix_place > 0
+   */
+  // TODO
 }
 
-function formaterMessageConfirmation(nom, quartierDepart, quartierArrivee, heure) {
-    return `Bonjour ${nom}, votre réservation pour ${quartierDepart}→${quartierArrivee} à ${heure} a été enregistrée`;
-    /**
-     * Génère le message de confirmation après réservation.
-     * @return {string} - message formaté
-     * Exemple :
-     *   formaterMessageConfirmation("Marie", "Bacongo", "Poto-Poto", "07:30")
-     *   → "Bonjour Marie, votre réservation pour Bacongo → Poto-Poto à 07:30 a été enregistrée."
-     */
-    // TODO
+function formaterMessageConfirmation(
+  nom,
+  quartierDepart,
+  quartierArrivee,
+  heure,
+) {
+  return `Bonjour ${nom}, votre réservation pour ${quartierDepart}→${quartierArrivee} à ${heure} a été enregistrée`;
+  /**
+   * Génère le message de confirmation après réservation.
+   * @return {string} - message formaté
+   * Exemple :
+   *   formaterMessageConfirmation("Marie", "Bacongo", "Poto-Poto", "07:30")
+   *   → "Bonjour Marie, votre réservation pour Bacongo → Poto-Poto à 07:30 a été enregistrée."
+   */
+  // TODO
+
+  /**
+   * Valide le formulaire de proposition de trajet.
+   * @param {Object} formulaire - avec les clés : quartier_depart,
+   *   quartier_arrivee, heure, places_dispo, prix_place
+   * @return {Object} - {valide: true/false, erreurs: [liste de messages]}
+   *
+   * Règles :
+   * - quartier_depart et quartier_arrivee obligatoires et différents
+   * - heure obligatoire au format "HH:MM"
+   * - places_dispo entre 1 et 8
+   * - prix_place > 0
+   */
+  // TODO
+}
+
+function formaterMessageConfirmation(
+  nom,
+  quartierDepart,
+  quartierArrivee,
+  heure,
+) {
+  /**
+   * Génère le message de confirmation après réservation.
+   * @return {string} - message formaté
+   * Exemple :
+   *   formaterMessageConfirmation("Marie", "Bacongo", "Poto-Poto", "07:30")
+   *   → "Bonjour Marie, votre réservation pour Bacongo → Poto-Poto à 07:30 a été enregistrée."
+   */
+  // TODO
+  // =======
+  /**
+   * Valide le formulaire de proposition de trajet.
+   * @param {Object} formulaire - avec les clés : quartier_depart,
+   *   quartier_arrivee, heure, places_dispo, prix_place
+   * @return {Object} - {valide: true/false, erreurs: [liste de messages]}
+   *
+   * Règles :
+   * - quartier_depart et quartier_arrivee obligatoires et différents
+   * - heure obligatoire au format "HH:MM"
+   * - places_dispo entre 1 et 8
+   * - prix_place > 0
+   */
+  // TODO
+}
+
+function formaterMessageConfirmation(
+  nom,
+  quartierDepart,
+  quartierArrivee,
+  heure,
+) {
+  this.nom = nom;
+  this.quartierDepart = quartierDepart;
+  this.quartierArrivee = quartierArrivee;
+  this.heure = heure;
+  return `Bonjour ${nom}, votre réservation pour ${quartierDepart}→${quartierArrivee} à ${heure} a été enregistrée`;
+  /**
+   * Génère le message de confirmation après réservation.
+   * @return {string} - message formaté
+   * Exemple :
+   *   formaterMessageConfirmation("Marie", "Bacongo", "Poto-Poto", "07:30")
+   *   → "Bonjour Marie, votre réservation pour Bacongo → Poto-Poto à 07:30 a été enregistrée."
+   */
+  // TODO
 }
 // ============================================================================
 // Dev FS5 — page Mes trajets
@@ -180,6 +255,8 @@ function filtrerReservationsParStatut(reservations, statut) {
    * @return {Array} - réservations correspondantes
    */
   // TODO
+
+  return reservations.filter((reservation) => reservation.statut === statut);
 }
 
 function calculerTotalDepenseParPassager(reservations) {
@@ -193,6 +270,10 @@ function calculerTotalDepenseParPassager(reservations) {
    *   → 1200
    */
   // TODO
+
+  return reservations
+    .filter((reservation) => reservation.statut !== "annule")
+    .reduce((total, reservation) => total + reservation.trajet.prix_place, 0);
 }
 
 // ============================================================================

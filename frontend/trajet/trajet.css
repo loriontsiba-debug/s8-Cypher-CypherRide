@@ -1,0 +1,136 @@
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+body {
+  background-color: #d1c5b344;
+  text-align: center;
+}
+
+.entete-trajet {
+  width: 500px;
+  height: 150px;
+  margin: auto;
+  text-align: left;
+  padding: 10px;
+  background: linear-gradient(
+    to right,
+    rgb(255, 123, 0),
+    rgba(235, 113, 0, 0.774)
+  );
+  margin-bottom: 10px;
+  border-radius: 20px;
+  color: white;
+}
+.entete-trajet span {
+  font-weight: 700;
+}
+.fiche-conducteur {
+  width: 500px;
+  height: 200px;
+  text-align: left;
+  background-color: white;
+  color: #2c2a29;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+#form-reservation {
+  display: flex;
+  margin: auto;
+  width: 500px;
+  height: 150px;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: left;
+}
+#form-reservation input {
+  width: auto;
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+#form-reservation button {
+  height: 35px;
+  margin: auto;
+  width: 50%;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  color: rgb(255, 123, 0);
+  background-color: #ffffff;
+}
+#form-reservation button:hover {
+  color: #ffffff;
+  background-color: rgb(255, 123, 0);
+  cursor: pointer;
+}
+
+#erreurs-form {
+  color: #ffffff;
+  background-color: #b71c1c;
+}
+
+#erreur-globale {
+  color: #ffffff;
+  background-color: #b71c1c;
+  width: 250px;
+  height: 30px;
+  margin: auto;
+  text-align: center;
+  align-items: left;
+  padding-top: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+/* -------------------------------------------
+        MEDIA QUERIES
+------------------------------------------- */
+@media only screen and (max-width: 768px) {
+  .entete-trajet {
+    width: 80%;
+    height: auto;
+  }
+  .fiche-conducteur {
+    width: 80%;
+    height: auto;
+  }
+  #form-reservation {
+    width: 80%;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .entete-trajet {
+    width: 80%;
+    height: auto;
+  }
+  .fiche-conducteur {
+    width: 80%;
+    height: auto;
+  }
+  #form-reservation {
+    width: 80%;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .entete-trajet {
+    width: 80%;
+    height: auto;
+  }
+  .fiche-conducteur {
+    width: 80%;
+    height: auto;
+  }
+  #form-reservation {
+    width: 80%;
+    height: auto;
+  }
+}
