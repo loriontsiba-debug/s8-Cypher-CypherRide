@@ -7,20 +7,21 @@
 body {
   background-color: #d1c5b344;
 }
+main {
+  text-align: center;
+}
 .barre-recherche-tel {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   flex-direction: column;
-  width: 390px;
-  height: 300px;
+  width: 250px;
+  height: 200px;
   margin: auto;
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 10px;
   background-color: #ffffff;
-  border: 1px solid black;
 }
 
 .barre-recherche-tel input,
@@ -59,7 +60,6 @@ select {
 #mt-liste {
   display: flex;
   flex-direction: column;
-  text-align: center;
 }
 
 .statut-effectue {
@@ -79,4 +79,42 @@ select {
   background-color: rgb(223, 200, 200);
   padding: 8px;
   border-radius: 8px;
+}
+
+/* ------------------------------------------
+          MEDIA QUERIES
+------------------------------------------ */
+@media only screen and (max-width: 1280px) {
+  .barre-recherche-tel {
+    /* width: 70%; 
+    height: auto; */
+    width: 390px;
+    height: 300px;
+  }
+  .total-depense {
+    width: 50%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .barre-recherche-tel {
+    width: 350px;
+    height: 300px;
+  }
+  .total-depense {
+    width: 50%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .barre-recherche-tel {
+    width: 250px;
+    height: 200px;
+  }
+  .total-depense {
+    width: 70%;
+    height: auto;
+  }
 }

@@ -6,12 +6,14 @@
 }
 body {
   background-color: #d1c5b344;
+  text-align: center;
 }
+
 .entete-trajet {
   width: 500px;
   height: 150px;
   margin: auto;
-  border: 1px solid black;
+  text-align: left;
   padding: 10px;
   background: linear-gradient(
     to right,
@@ -28,7 +30,7 @@ body {
 .fiche-conducteur {
   width: 500px;
   height: 200px;
-  border: 1px solid black;
+  text-align: left;
   background-color: white;
   color: #2c2a29;
   padding: 10px;
@@ -46,6 +48,7 @@ body {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 20px;
+  text-align: left;
 }
 #form-reservation input {
   width: auto;
@@ -72,4 +75,62 @@ body {
 #erreurs-form {
   color: #ffffff;
   background-color: #b71c1c;
+}
+
+#erreur-globale {
+  color: #ffffff;
+  background-color: #b71c1c;
+  width: 250px;
+  height: 30px;
+  margin: auto;
+  text-align: center;
+  align-items: left;
+  padding-top: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+/* -------------------------------------------
+        MEDIA QUERIES
+------------------------------------------- */
+@media only screen and (max-width: 768px) {
+  .entete-trajet {
+    width: 80%;
+    height: auto;
+  }
+  .fiche-conducteur {
+    width: 80%;
+    height: auto;
+  }
+  #form-reservation {
+    width: 80%;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .entete-trajet {
+    width: 80%;
+    height: auto;
+  }
+  .fiche-conducteur {
+    width: 80%;
+    height: auto;
+  }
+  #form-reservation {
+    width: 80%;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .entete-trajet {
+    width: 80%;
+    height: auto;
+  }
+  .fiche-conducteur {
+    width: 80%;
+    height: auto;
+  }
+  #form-reservation {
+    width: 80%;
+    height: auto;
+  }
 }
