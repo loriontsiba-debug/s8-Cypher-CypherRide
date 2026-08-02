@@ -96,6 +96,37 @@ function formaterHeure(heure) {
 // ============================================================================
 
 function validerFormulaireProposer(formulaire) {
+  let erreurs = [];//on crée un tableau des erreurs(une liste vide pour mettre les erreurs)
+        //ce code verifie le quartier de depart
+        //on demande es ce que le quartier de depart est vide ou null(absent)
+        if (!formulaire.quartier_depart){
+            erreurs.push("quartier de depart obligatoire")//si une erreur est trouver elle renvoie ce message et l'ajoute dans le tableau
+        }
+        //ce code verifie le quartier d'arriver
+        
+        if(!formulaire.quartier_arrivee){
+            erreurs.push("quartier d'arrivé obligatoire")
+        }
+        //ce code verifie les quartiers sont different
+        if(formulaire.quartier_depart === formulaire.quartier_arrivee){
+            erreurs.push("quartier doivent etre different")
+        }
+        //ce code verifie l'heure pas le formet 
+        if(!formulaire.heure){
+            erreurs.push("l'heure est obligatoire");
+        }
+        //ce code verifie le nombre de place
+        if(formulaire. places_dispo < 1 || formulaire.places_dispo >8){
+            erreurs.push("le nombre  de place doit etre compris entre 1 et 8 ");
+        }
+        //ce code verifie le prix saisie doti etre inferieur à 0
+        if(formulaire.prix_place <=0){
+            erreurs.push("le prix doit être superieure à 0");
+        }
+        return{
+            valide: erreurs.length === 0,
+            erreurs: erreurs
+        };
   /**
    * Valide le formulaire de proposition de trajet.
    * @param {Object} formulaire - avec les clés : quartier_depart,
@@ -117,6 +148,7 @@ function formaterMessageConfirmation(
   quartierArrivee,
   heure,
 ) {
+  return `Bonjour ${nom}, votre réservation pour ${quartierDepart}→${quartierArrivee} à ${heure} a été enregistrée`;
   /**
    * Génère le message de confirmation après réservation.
    * @return {string} - message formaté
