@@ -13,7 +13,7 @@
  * Pour vérifier votre travail : ouvrez functions.test.html dans le navigateur.
  * Tous les tests doivent passer au VERT.
  */
-
+//
 // ============================================================================
 // Dev FS1 — page Accueil
 // ============================================================================
