@@ -37,26 +37,38 @@
       </nav>
 
   <!-- NAVIGATION — TODO (Dev FS6) -->
-  <header class="nav-bar">
+  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- partie logo -->
+      <a href="../../index.html">
+        <img src="../images/logo.jpg" width="250" alt="BraCovoit logo">
+      </a>
 
-    <div class="logo">
-      <h1>Bra<span>Covoit</span></h1>
+      <!-- partie bouton hamburguer -->
+      <button class="burger-btn" id="burgerBtn" aria-label="ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
+      <!-- partie menu -->
+      <nav class="nav-principale" id="navPrin" aria-label="Navigation principale" aria-expanded="false">
+        <a href="../../index.html" class="nav-link active">Accueil</a>
+        <a href="../recherche/recherche.html" class="nav-link">Rechercher</a>
+        <a href="../proposer/proposer.html" class="nav-link">Proposer un trajet</a>
+        <a href="../mes-trajets/mes-trajets.html" class="nav-link">Mes trajets</a>
+        <a href="../dashboard/dashboard.html" class="nav-link">Dashboard</a>
+        <div class="header-actions">
+          <a href="../login/login.html" class="btn btn-premier">Connexion</a>
+          <a href="../inscription/inscription.html" class="btn btn-deuxieme">Inscription</a>
+        </div>
+
+      </nav>
     </div>
 
-    <nav class="liens">
-      <ul>
-        <li><a href="../accueil/index.html">Accueil</a></li>
-        <li><a href="../recherche/recherche.html">Rechercher</a></li>
-        <li><a href="../proposer-trajet/proposer.html">Proposer un trajet</a></li>
-        <li><a href="../mes-trajets/mes-trajets.html">Mes trajets</a></li>
-        <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
-      </ul>
-    </nav>
-
-    <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-    <div id="nav-session"></div>
   </header>
+  <div id="nav-session"></div>
 
 
   <main>
@@ -130,26 +142,26 @@
          *** NE PAS MODIFIER l'id *** -->
     <section class="trajet-vedette">
       <h2>🔥 Trajet vedette</h2>
-<div class="trajet">
+      <div class="trajet">
 
-    <div class="depart">
-        <p class="titre">Départ</p>
-        <h3>Bacongo</h3>
-        <p>🕒 07:30</p>
-        <p>💰 500 FCFA</p>
-    </div>
+        <div class="depart">
+          <p class="titre">Départ</p>
+          <h3>Bacongo</h3>
+          <p>🕒 07:30</p>
+          <p>💰 500 FCFA</p>
+        </div>
 
-    <div class="fleche">
-        →
-    </div>
+        <div class="fleche">
+          →
+        </div>
 
-    <div class="arrivee">
-        <p class="titre">Arrivée</p>
-        <h3>Plateau des 15 ans</h3>
-        <p>👥 127 réservations</p>
-    </div>
+        <div class="arrivee">
+          <p class="titre">Arrivée</p>
+          <h3>Plateau des 15 ans</h3>
+          <p>👥 127 réservations</p>
+        </div>
 
-</div>
+      </div>
 
 
 
