@@ -11,6 +11,30 @@
 </head>
 <body id="page-inscription">
 
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html">
+        <img src="../images/logo.jpg" width="250" alt="BraCovoit logo">
+      </a>
+
+      <button class="burger-btn" id="burgerBtn" aria-label="ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-principale" id="navPrin" aria-label="Navigation principale" aria-expanded="false">
+        <a href="../../index.html" class="nav-link">Accueil</a>
+        <a href="../recherche/recherche.html" class="nav-link">Rechercher</a>
+        <a href="../proposer/proposer.html" class="nav-link">Proposer un trajet</a>
+        <a href="../mes-trajets/mes-trajets.html" class="nav-link">Mes trajets</a>
+        <a href="../dashboard/dashboard.html" class="nav-link">Dashboard</a>
+
+        <div class="header-actions">
+          <div id="nav-session"></div>
+        </div>
+
   <!-- NAVIGATION -->
   <header class="header-nav">
     <div class="logo">
@@ -34,12 +58,21 @@
         <a href="../proposer/proposer.html">Proposer un trajet</a>
         <a href="../trajets/trajets.html">Mes trajets</a>
         <a href="../dashboard/dashboard.html">Dashboard</a>
+
       </nav>
       
       <!-- Injection dynamique de la session via main.js -->
       <div class="nav-actions" id="nav-session"></div>
     </div>
   </header>
+
+
+  <main>
+    <!-- =====================================================================
+         FORMULAIRE — TODO (Dev FS7)
+         Mettre en forme le formulaire d'inscription : nom, téléphone,
+         mot de passe. Prévoir un layout clair en colonne, avec des labels
+         visibles pour chaque champ.
 
   <main class="auth-container">
     <div class="auth-card">
@@ -51,6 +84,7 @@
         <button type="button" class="role-btn active">Passager</button>
         <button type="button" class="role-btn">Conducteur</button>
       </div>
+
 
       <form id="form-inscription" class="auth-form">
         <div class="form-row">
