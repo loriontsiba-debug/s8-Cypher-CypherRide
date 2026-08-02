@@ -5,78 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BraCovoit — Connexion</title>
   <link rel="stylesheet" href="login.css">
-  <link rel="stylesheet" href="../navigation_style/navigation.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body id="page-login">
 
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="../../index.html">
-        <img src="../images/logo.jpg" width="250" alt="BraCovoit logo">
-      </a>
+  <!-- NAVIGATION -->
+  <header class="header-nav">
+    <div class="logo">
+      <img src="../images/logo.jpg" alt="BraCovoit Logo" class="logo-img">
+    </div>
 
-      <button class="burger-btn" id="burgerBtn" aria-label="ouvrir le menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <!-- Bouton Burger (mobile) -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
 
-      <nav class="nav-principale" id="navPrin" aria-label="Navigation principale" aria-expanded="false">
-        <a href="../../index.html" class="nav-link">Accueil</a>
-        <a href="../recherche/recherche.html" class="nav-link">Rechercher</a>
-        <a href="../proposer/proposer.html" class="nav-link">Proposer un trajet</a>
-        <a href="../mes-trajets/mes-trajets.html" class="nav-link">Mes trajets</a>
-        <a href="../dashboard/dashboard.html" class="nav-link">Dashboard</a>
-
-        <div class="header-actions">
-          <a href="login.html" class="btn btn-premier active">Connexion</a>
-          <a href="../inscription/inscription.html" class="btn btn-deuxieme">Inscription</a>
-        </div>
+    <!-- Conteneur pliable du menu -->
+    <div class="nav-menu" id="navMenu">
+      <nav class="nav-links">
+        <a href="../index.html">Accueil</a>
+        <a href="../recherche/recherche.html">Rechercher</a>
+        <a href="../proposer/proposer.html">Proposer un trajet</a>
+        <a href="../trajets/trajets.html">Mes trajets</a>
+        <a href="../dashboard/dashboard.html">Dashboard</a>
       </nav>
+      
+      <!-- L'id nav-session est placé ici pour recevoir le contenu injecté par main.js -->
+      <div class="nav-actions" id="nav-session"></div>
     </div>
   </header>
 
-  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <div id="nav-session"></div>
+  <main class="auth-container">
+    <div class="auth-card text-center">
+      <div class="auth-logo-badge">BC</div>
+      <h1 class="auth-title">Connexion</h1>
+      <p class="auth-subtitle">Bienvenue sur BraCovoit</p>
 
-  <main>
-    <!-- =====================================================================
-         FORMULAIRE — TODO (Dev FS7)
-         Mettre en forme le formulaire de connexion : téléphone, mot de
-         passe. Prévoir un layout clair en colonne, avec des labels
-         visibles pour chaque champ.
+      <form id="form-login" class="auth-form">
+        <div class="form-group">
+          <input type="tel" id="l-telephone" placeholder="Numéro de téléphone">
+        </div>
 
-         *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
-         ===================================================================== -->
-    <form id="form-login">
-      <label for="l-telephone">Téléphone</label>
-      <input type="tel" id="l-telephone" placeholder="066123456">
+        <div class="form-group">
+          <input type="password" id="l-mot-de-passe" placeholder="Mot de passe">
+        </div>
 
-      <label for="l-mot-de-passe">Mot de passe</label>
-      <input type="password" id="l-mot-de-passe">
+        <div class="forgot-password">
+          <a href="#">Mot de passe oublié ?</a>
+        </div>
 
-      <button type="submit">Se connecter</button>
-    </form>
+        <button type="submit" class="btn-submit">Se connecter</button>
+      </form>
 
-    <!-- Zone d'erreurs de validation — TODO (Dev FS7) : mettre en forme la
-         liste <ul><li> injectée par main.js en cas de formulaire invalide.
-         NE PAS MODIFIER l'id. -->
-    <div id="erreurs-form" hidden></div>
+      <!-- Zone d'erreurs -->
+      <div id="erreurs-form" hidden class="alert-error"></div>
 
-    <!-- LIEN VERS INSCRIPTION — TODO (Dev FS7) : lien "Pas encore de compte ?
-         S'inscrire" pointant vers ../inscription/inscription.html -->
+      <div class="auth-footer">
+        <p>Pas encore de compte ? <a href="../inscription/inscription.html">S'inscrire</a></p>
+      </div>
+
+    </div>
   </main>
 
-  <div id="erreur-globale" hidden></div>
+  <div id="erreur-globale" hidden class="alert-error-global"></div>
 
-  <footer>
-    <div class="footer-copyright">
-      <p>&copy; <span id="year"></span> BraCovoit. Tous droits réservés.</p>
-    </div>
-  </footer>
+  <!-- SCRIPT DU MENU BURGER -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
 
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+  </script>
+
+  <!-- SCRIPTS EXTERNES -->
   <script src="../functions.js"></script>
   <script src="../main.js"></script>
-  <script src="../navigation_style/script.js"></script>
 </body>
 </html>
