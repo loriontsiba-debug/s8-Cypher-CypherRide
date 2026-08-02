@@ -180,10 +180,13 @@ function validerFormulaireProposer(formulaire) {
 }
 
 
-    return {
+    /*return {
         valide: erreurs.length === 0,
         erreurs: erreurs
-    };
+    };*/
+    function maFonction() {
+  return total;
+}
 
 
 function formaterMessageConfirmation(
