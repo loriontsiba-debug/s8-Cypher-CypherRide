@@ -1,12 +1,12 @@
 :root {
-  --primary-orange: #d9531e;
-  --primary-hover: #c24413;
-  --bg-cream: #f6f4ee;
+  --primary-orange: #e55b2b;
+  --primary-hover: #c94a1d;
+  --bg-cream: #f7f6f2;
   --card-bg: #ffffff;
-  --text-dark: #1f2937;
-  --text-muted: #8c8c8c;
+  --text-dark: #2d3748;
+  --text-muted: #718096;
   --border-color: #eee9e0;
-  --input-bg: #ffffff;
+  --pill-bg-active: #fdeee9;
 }
 
 * {
@@ -17,8 +17,6 @@
 
 body {
   font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
   background-color: var(--bg-cream);
   color: var(--text-dark);
   min-height: 100vh;
@@ -26,13 +24,16 @@ body {
   flex-direction: column;
 }
 
-/* Header Navbar */
+/* ==========================================
+   HEADER NAVBAR (Style 2e photo)
+   ========================================== */
 .header-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 40px;
-  background-color: var(--bg-cream);
+  padding: 14px 48px;
+  background-color: #ffffff; /* Fond blanc comme la 2e photo */
+  border-bottom: 1px solid #f0ede6;
   position: relative;
   z-index: 100;
 }
@@ -40,105 +41,129 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 
+.logo-img {
+  height: 48px; /* Ajuste la hauteur de l'image de ton logo */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Fallback si tu utilises du texte pour le logo */
 .logo-icon {
   background-color: var(--primary-orange);
   color: #fff;
   font-weight: 700;
   font-size: 13px;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 }
 
 .logo-text {
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: 800;
+  font-size: 20px;
   color: var(--primary-orange);
 }
 
-/* Container du menu (liens + boutons) */
+/* Nav Menu */
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 36px;
 }
 
 .nav-links {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 12px;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #4b5563;
-  font-size: 13px;
+  color: #5a6578;
+  font-size: 14px;
   font-weight: 500;
-  transition: color 0.2s;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
 }
 
 .nav-links a:hover {
   color: var(--primary-orange);
 }
 
-/* Styles automatiques pour le contenu dynamique injecté par main.js */
+/* Style de l'onglet actif (pilule rose/orange clair comme sur la photo) */
+.nav-links a.active {
+  background-color: var(--pill-bg-active);
+  color: var(--primary-orange);
+  font-weight: 600;
+}
+
+/* Actions Nav & Contenu dynamique main.js */
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 13px;
+  gap: 12px;
 }
 
-/* Stylise le 1er lien injecté (ex: Se connecter) */
+/* Bouton 1 : Connexion (Bordure fine, texte gras) */
 .nav-actions a:first-child,
 .btn-secondary {
-  border: 1px solid #e0dbd1;
-  padding: 8px 18px;
-  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 10px 22px;
+  border-radius: 14px;
   text-decoration: none;
-  color: var(--text-dark);
-  font-size: 13px;
-  font-weight: 500;
-  background: #fff;
+  color: #1a202c;
+  font-size: 14px;
+  font-weight: 700;
+  background: #ffffff;
   display: inline-block;
   text-align: center;
+  transition: border-color 0.2s;
 }
 
-/* Stylise le 2ème lien injecté (ex: S'inscrire) */
+.nav-actions a:first-child:hover,
+.btn-secondary:hover {
+  border-color: #cbd5e0;
+}
+
+/* Bouton 2 : Inscription (Fond Orange Plein, coins arrondis) */
 .nav-actions a:last-child,
 .btn-primary {
   background-color: var(--primary-orange);
-  color: #fff;
-  padding: 8px 18px;
-  border-radius: 20px;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 14px;
   text-decoration: none;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 700;
   display: inline-block;
   text-align: center;
+  transition: background-color 0.2s;
 }
 
-/* Stylise le bouton Déconnexion s'il est présent */
+.nav-actions a:last-child:hover,
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
 .nav-actions button,
 .nav-actions #btn-deconnexion {
-  border: 1px solid #e0dbd1;
-  padding: 8px 18px;
-  border-radius: 20px;
-  color: var(--text-dark);
-  font-size: 13px;
-  font-weight: 500;
-  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 10px 22px;
+  border-radius: 14px;
+  color: #1a202c;
+  font-size: 14px;
+  font-weight: 700;
+  background: #ffffff;
   cursor: pointer;
-  margin-left: 8px;
 }
 
-/* Bouton Burger (Masqué sur PC) */
+/* Burger Menu (Mobile) */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -172,7 +197,9 @@ body {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Auth Card Layout */
+/* ==========================================
+   AUTH FORM & CARD LAYOUT
+   ========================================== */
 .auth-container {
   flex: 1;
   display: flex;
@@ -183,7 +210,7 @@ body {
 
 .auth-card {
   background: var(--card-bg);
-  border-radius: 20px;
+  border-radius: 24px;
   width: 100%;
   max-width: 440px;
   padding: 36px 32px;
@@ -209,7 +236,7 @@ body {
 }
 
 .auth-title {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: #111;
   margin-bottom: 4px;
@@ -221,7 +248,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Boutons Passager / Conducteur */
 .role-selector {
   display: flex;
   background-color: #f3efe6;
@@ -249,7 +275,6 @@ body {
   color: white;
 }
 
-/* Form inputs */
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -312,7 +337,6 @@ body {
   background-color: var(--primary-hover);
 }
 
-/* Footer & Notes */
 .auth-footer {
   margin-top: 20px;
   text-align: center;
@@ -343,13 +367,10 @@ body {
   font-size: 12px;
 }
 
-/* ==========================================
-   MEDIA QUERIES (RESPONSIVE & BURGER MENU)
-   ========================================== */
-
+/* Responsive Menu */
 @media (max-width: 768px) {
   .header-nav {
-    padding: 16px 20px;
+    padding: 14px 20px;
   }
 
   .menu-toggle {
@@ -361,7 +382,7 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--bg-cream);
+    background-color: #ffffff;
     flex-direction: column;
     padding: 20px;
     gap: 20px;
@@ -375,8 +396,13 @@ body {
 
   .nav-links {
     flex-direction: column;
-    align-items: center;
-    gap: 16px;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
   }
 
   .nav-actions {
