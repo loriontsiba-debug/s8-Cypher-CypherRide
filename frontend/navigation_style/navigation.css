@@ -80,15 +80,19 @@ body {
 
 #nav-session a,
 #nav-session button {
-    padding: 10px 20px;
-    border-radius: var(--taille-radius);
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: opacity 0.2s ease, background 0.2s ease;
+  padding: 10px 20px;
+  border-radius: var(--taille-radius);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
 }
 
 #nav-session a:first-child {
@@ -130,6 +134,10 @@ body {
   border: 1px solid transparent;
   cursor: pointer;
   transition: opacity 0.2s ease, background 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
 }  
 
 .btn-premier {
@@ -248,5 +256,25 @@ body {
 
   .header-actions .btn {
     flex: 1;
+  }
+}
+
+/* Ajustements pour écrans moyens (ex: 1024px) afin d'éviter la coupure des libellés */
+@media (max-width: 1024px) {
+  /* Autoriser les boutons à rétrécir proprement dans les flex containers */
+  .header-actions .btn,
+  #nav-session a,
+  #nav-session button {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  /* Ajuster l'espacement horizontal pour gagner de la place */
+  .header-inner {
+    gap: 12px;
   }
 }
