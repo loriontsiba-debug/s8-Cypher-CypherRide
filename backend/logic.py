@@ -241,7 +241,7 @@ def compter_reservations_par_trajet(trajet_id, reservations):
     for reservation in reservations:
 
         # On vérifie si la réservation correspond au trajet recherché ET si son statut n'est pas "annule".
-        if reservation.get("trajet_id") == trajet_id and reservation.get("statut") != "annule":
+        if reservation["trajet_id"] == trajet_id and reservation["statut"] != "annule":
 
             # Si les deux conditions sont remplies, on incrémente le compteur.
             compteur += 1
@@ -313,7 +313,7 @@ def verifier_place_disponible(trajet_id, trajets, reservations):
         return {"place_dispo": False, "places_restantes": 0, "message": "Trajet complet"}
 
     # Si des places sont disponibles, on retourne les informations correspondantes.
-    return {"place_dispo": True, "places_restantes": places_restantes, "message": ""}
+    return {"place_dispo": True, "places_restantes": places_restantes, "message": "Place(s) disponible(s)"}
 
 
 def filtrer_reservations_par_statut(reservations, statut):
