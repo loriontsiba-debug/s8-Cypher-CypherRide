@@ -4,6 +4,7 @@
     padding: 0;
 }
 
+
 body {
     background: #F9F6F0;
     font-family: "Inter", sans-serif;
@@ -13,54 +14,52 @@ body {
 }
 
 header {
-    background-color: white;
-    padding: 20px 40px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
-    margin-bottom: 30px;
+
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+
 }
 
-.nav-bar {
+
+#nav-session {
+
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-
-}
-
-.logo h1 {
-    font-size:2rem;
-    font-weight: 700;
-    margin: 0;
-
+    gap: 15px;
 
 }
 
 
-.logo span {
-    color: #D14900;
-    ;
-}
+#nav-session a,
+#nav-session button {
 
-.nav-bar ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
+    background: #D14900;
 
-.nav-bar ul a {
+    color: white;
+
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
     text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: .3s;
-    padding: 8px 0;
+
+    font-family: "Inter", sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
 
 }
 
-.nav-bar ul a:hover {
 
-    color: #D14900;
+#nav-session a:hover,
+#nav-session button:hover {
+
+    background: #A83B00;
 
 }
 
@@ -265,21 +264,6 @@ background:#FFF3EC;
 
 @media (min-width:768px) and (max-width:1099px){
 
-    header{
-        padding:20px 30px;
-    }
-
-    .nav-bar{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:20px;
-    }
-
-    .nav-bar ul{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:20px;
-    }
 
     .dashboard-entete{
         flex-direction:column;
@@ -297,31 +281,6 @@ background:#FFF3EC;
 
     body{
         padding:10px;
-    }
-
-    header{
-        padding:20px;
-    }
-
-    .nav-bar{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:20px;
-    }
-
-    .nav-bar ul{
-        flex-direction:column;
-        width:100%;
-        gap:15px;
-    }
-
-    .nav-bar ul li{
-        width:100%;
-    }
-
-    .nav-bar ul a{
-        display:block;
-        width:100%;
     }
 
     #nav-session{
