@@ -98,3 +98,29 @@ form{
 padding-right: 45px;
 }
 }
+#erreurs-form{
+width: 61%;
+max-width: 100%;
+margin-left: 20%;
+margin-top: 20px;
+border: 1px solid rgb(197, 196, 196) ;
+box-shadow: 5px 5px 5px 5px  rgb(240, 237, 237);
+border-radius: 10px;
+
+}
+#erreurs-form ul{
+font-size: 1rem;
+line-height: 25px;
+color: red;
+
+}
+@media only screen and (max-width: 768px){
+#erreurs-form{
+margin-left: 155px;
+}
+}
+@media only screen and (max-width: 375px){
+#erreurs-form{
+margin-left: 100px;
+}
+}
