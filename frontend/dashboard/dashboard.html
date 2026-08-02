@@ -11,6 +11,31 @@
 
 <body id="page-dashboard">
 
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html">
+        <img src="../images/logo.jpg" width="250" alt="BraCovoit logo">
+      </a>
+
+      <button class="burger-btn" id="burgerBtn" aria-label="ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-principale" id="navPrin" aria-label="Navigation principale" aria-expanded="false">
+        <a href="../../index.html" class="nav-link">Accueil</a>
+        <a href="../recherche/recherche.html" class="nav-link">Rechercher</a>
+        <a href="../proposer/proposer.html" class="nav-link">Proposer un trajet</a>
+        <a href="../mes-trajets/mes-trajets.html" class="nav-link">Mes trajets</a>
+        <a href="dashboard.html" class="nav-link active">Dashboard</a>
+
+        <div class="header-actions">
+          <div id="nav-session"></div>
+        </div>
+      </nav>
+
   <!-- NAVIGATION — TODO (Dev FS6) -->
   <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
   <header class="site-header">
@@ -45,6 +70,9 @@
   </header>
   <div id="nav-session"></div>
 
+
+  <main>
+=======
   <main class="container">
 
     <section class="dashboard-entete">
@@ -54,6 +82,7 @@
       </div>
       <span class="badge-actif">● Plateforme active</span>
     </section>
+
 
     <!-- =====================================================================
          CARTES INDICATEURS — TODO (Dev FS6)

@@ -30,4 +30,23 @@ document.addEventListener('DOMContentLoaded', function () {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+
+  // STYLE NAV SESSION DYNAMIQUE
+  const navSession = document.getElementById('nav-session');
+  if (navSession) {
+    const links = navSession.querySelectorAll('a');
+    links.forEach((link, index) => {
+      link.classList.add('btn');
+      if (index === 0) {
+        link.classList.add('btn-premier');
+      } else {
+        link.classList.add('btn-deuxieme');
+      }
+    });
+
+    const button = navSession.querySelector('button');
+    if (button) {
+      button.classList.add('btn', 'btn-premier');
+    }
+  }
 });
