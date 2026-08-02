@@ -203,6 +203,9 @@ body {
   line-height: 1.5;
   padding: 16px 24px;
 }
+.footer-copyright p{
+color: var(--couleur-orange);
+}
 
 @media (max-width: 600px) {
   .footer-copyright {
