@@ -1,20 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BraCovoit — Détail du trajet</title>
-  <link rel="stylesheet" href="trajet.css">
-</head>
-<body id="page-trajet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BraCovoit — Détail du trajet</title>
+    <link rel="stylesheet" href="trajet.css" />
+    <link rel="stylesheet" href="../navigation_style/navigation.css" />
+  </head>
 
-  <!-- NAVIGATION — TODO (Dev FS3) -->
+  <body id="page-trajet">
+    <!-- NAVIGATION — TODO (Dev FS3) -->
 
-  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <div id="nav-session"></div>
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- partie logo -->
+        <a href="../../index.html">
+          <img src="../images/logo.jpg" width="250" alt="BraCovoit logo" />
+        </a>
 
-  <main>
-    <!-- =====================================================================
+        <!-- partie bouton hamburguer -->
+        <button class="burger-btn" id="burgerBtn" aria-label="ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- partie menu -->
+        <nav
+          class="nav-principale"
+          id="navPrin"
+          aria-label="Navigation principale"
+          aria-expanded="false"
+        >
+          
+
+          <!-- partie menu -->
+          <nav class="nav-principale" id="navPrin" aria-label="Navigation principale" aria-expanded="false">
+            <a href="../accueil/index.html" class="nav-link active">Accueil</a>
+            <a href="../recherche/recherche.html" class="nav-link">Rechercher</a>
+            <a href="../proposer/proposer.html" class="nav-link">Proposer un trajet</a>
+            <a href="../mes-trajets/mes-trajets.html" class="nav-link">Mes trajets</a>
+            <a href="../dashboard/dashboard.html" class="nav-link">Dashboard</a>
+
+
+          <div class="header-actions">
+            <div id="nav-session"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+
+    <main>
+      <!-- =====================================================================
          ENTÊTE TRAJET — TODO (Dev FS3)
          Mettre en forme le titre du trajet, l'heure, la date, le prix, le
          commentaire éventuel et le badge de disponibilité. Le badge reçoit
@@ -23,31 +61,31 @@
 
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
-    <section class="entete-trajet">
-      <h1 id="trajet-titre"></h1>
-      <p>Heure : <span id="trajet-heure"></span></p>
-      <p>Date : <span id="trajet-date"></span></p>
-      <p>Prix : <span id="trajet-prix"></span></p>
-      <p>Commentaire : <span id="trajet-commentaire"></span></p>
-      <span id="badge-places" class="badge"></span>
-    </section>
+      <section class="entete-trajet">
+        <h1 id="trajet-titre"></h1>
+        <p>Heure : <span id="trajet-heure"></span></p>
+        <p>Date : <span id="trajet-date"></span></p>
+        <p>Prix : <span id="trajet-prix"></span></p>
+        <p>Commentaire : <span id="trajet-commentaire"></span></p>
+        <span id="badge-places" class="badge"></span>
+      </section>
 
-    <!-- =====================================================================
+      <!-- =====================================================================
          FICHE CONDUCTEUR — TODO (Dev FS3)
          Mettre en forme l'encart conducteur : nom, véhicule, note,
          expérience. Un visuel type "carte profil" est attendu.
 
          *** NE PAS MODIFIER les id ci-dessous ***
          ===================================================================== -->
-    <section class="fiche-conducteur">
-      <h2>Conducteur</h2>
-      <p>Nom : <span id="conducteur-nom"></span></p>
-      <p>Véhicule : <span id="conducteur-vehicule"></span></p>
-      <p>Note : <span id="conducteur-note"></span></p>
-      <p>Expérience : <span id="conducteur-trajets"></span></p>
-    </section>
+      <section class="fiche-conducteur">
+        <h2>Conducteur</h2>
+        <p>Nom : <span id="conducteur-nom"></span></p>
+        <p>Véhicule : <span id="conducteur-vehicule"></span></p>
+        <p>Note : <span id="conducteur-note"></span></p>
+        <p>Expérience : <span id="conducteur-trajets"></span></p>
+      </section>
 
-    <!-- =====================================================================
+      <!-- =====================================================================
          FORMULAIRE DE RÉSERVATION — TODO (Dev FS3)
          Mettre en forme le formulaire : nom, téléphone, bouton (désactivé
          si trajet complet — main.js gère l'attribut disabled). Si
@@ -56,25 +94,32 @@
 
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
-    <form id="form-reservation">
-      <label for="r-nom">Votre nom</label>
-      <input type="text" id="r-nom">
+      <form id="form-reservation">
+        <label for="r-nom">Votre nom</label>
+        <input type="text" id="r-nom" />
 
-      <label for="r-tel">Votre téléphone</label>
-      <input type="tel" id="r-tel">
+        <label for="r-tel">Votre téléphone</label>
+        <input type="tel" id="r-tel" placeholder="Ex: 06 000 00 00" />
 
-      <button type="submit" id="btn-reserver">Réserver une place</button>
-    </form>
+        <button type="submit" id="btn-reserver">Réserver une place</button>
+      </form>
 
-    <!-- Zone d'erreurs de validation — TODO (Dev FS3) : mettre en forme la
+      <!-- Zone d'erreurs de validation — TODO (Dev FS3) : mettre en forme la
          liste <ul><li> injectée par main.js en cas de formulaire invalide.
          NE PAS MODIFIER l'id. -->
-    <div id="erreurs-form" hidden></div>
-  </main>
+      <div id="erreurs-form" hidden></div>
+    </main>
 
-  <div id="erreur-globale" hidden></div>
+    <div id="erreur-globale" hidden></div>
 
-  <script src="../functions.js"></script>
-  <script src="../main.js"></script>
-</body>
+    <footer>
+      <div class="footer-copyright">
+        <p>&copy; <span id="year"></span> BraCovoit. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script src="../functions.js"></script>
+    <script src="../main.js"></script>
+    <script src="../navigation_style/script.js"></script>
+  </body>
 </html>

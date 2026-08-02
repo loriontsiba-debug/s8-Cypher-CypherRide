@@ -1,20 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BraCovoit — Mes trajets</title>
-  <link rel="stylesheet" href="mes-trajets.css">
-</head>
-<body id="page-mes-trajets">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BraCovoit — Mes trajets</title>
+    <link rel="stylesheet" href="mes-trajets.css" />
+<link rel="stylesheet" href="../navigation_style/navigation.css" />
+  </head>
+  <body id="page-mes-trajets">
+    <!-- NAVIGATION — TODO (Dev FS5) -->
 
-  <!-- NAVIGATION — TODO (Dev FS5) -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- partie logo -->
+        <a href="../../index.html">
+          <img src="../images/logo.jpg" width="250" alt="BraCovoit logo" />
+        </a>
 
-  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <div id="nav-session"></div>
+        <!-- partie bouton hamburguer -->
+        <button class="burger-btn" id="burgerBtn" aria-label="ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-  <main>
-    <!-- =====================================================================
+        <!-- partie menu -->
+        <nav
+          class="nav-principale"
+          id="navPrin"
+          aria-label="Navigation principale"
+          aria-expanded="false"
+        >
+          
+
+          <!-- partie menu -->
+          <nav class="nav-principale" id="navPrin" aria-label="Navigation principale" aria-expanded="false">
+            <a href="../accueil/index.html" class="nav-link active">Accueil</a>
+            <a href="../recherche/recherche.html" class="nav-link">Rechercher</a>
+            <a href="../proposer/proposer.html" class="nav-link">Proposer un trajet</a>
+
+            <a href="../mes-trajets/mes-trajets.html" class="nav-link">Mes trajets</a>
+
+            <a href="../dashboard/dashboard.html" class="nav-link">Dashboard</a>
+
+
+          <div class="header-actions">
+            <div id="nav-session"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+ 
+    <main>
+      <!-- =====================================================================
+
          RECHERCHE PAR NUMÉRO — TODO (Dev FS5)
          Mettre en forme le bloc de saisie du numéro de téléphone, le
          bouton de chargement et le filtre de statut. Layout en ligne sur
@@ -22,23 +62,33 @@
 
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
          ===================================================================== -->
-    <section class="barre-recherche-tel">
-      <input type="text" id="mt-tel" placeholder="Votre numéro de téléphone">
-      <button id="btn-charger-mestrajets">Voir mes trajets</button>
-      <select id="mt-filtre-statut">
-        <option value="">Tous les statuts</option>
-        <option value="effectue">Effectués</option>
-        <option value="en_attente">En attente</option>
-        <option value="annule">Annulés</option>
-      </select>
-    </section>
+      <div id="entete-mes-trajets">
+        <h1>Mes trajets</h1>
+        <p>Historiques de mes reservations et depenses totals</p>
+      </div>
+      <section class="barre-recherche-tel">
+        <input
+          type="text"
+          id="mt-tel"
+          placeholder="Votre numéro de téléphone"
+        />
+        <button id="btn-charger-mestrajets">Voir mes trajets</button>
+        <select id="mt-filtre-statut">
+          <option value="">Tous les statuts</option>
+          <option value="effectue">Effectués</option>
+          <option value="en_attente">En attente</option>
+          <option value="annule">Annulés</option>
+        </select>
+      </section>
 
-    <!-- TOTAL DÉPENSÉ — TODO (Dev FS5) : mettre en avant ce chiffre
+      <!-- TOTAL DÉPENSÉ — TODO (Dev FS5) : mettre en avant ce chiffre
          visuellement (encart ou bandeau).
          *** NE PAS MODIFIER l'id *** -->
-    <p class="total-depense">Total dépensé : <strong id="mt-total"></strong></p>
+      <p class="total-depense">
+        Total dépensé : <strong id="mt-total"></strong>
+      </p>
 
-    <!-- =====================================================================
+      <!-- =====================================================================
          LISTE DES RÉSERVATIONS — TODO (Dev FS5)
          main.js remplit ce conteneur avec des cartes .carte-reservation,
          chacune avec un <h3>, des <p> (date, conducteur, prix), et un
@@ -48,12 +98,18 @@
 
          *** NE PAS MODIFIER l'id ***
          ===================================================================== -->
-    <section id="mt-liste"></section>
-  </main>
+      <section id="mt-liste"></section>
+    </main>
 
-  <div id="erreur-globale" hidden></div>
+    <div id="erreur-globale" hidden></div>
+    <footer>
+      <div class="footer-copyright">
+        <p>&copy; <span id="year"></span> BraCovoit. Tous droits réservés.</p>
+      </div>
+    </footer>
 
-  <script src="../functions.js"></script>
-  <script src="../main.js"></script>
-</body>
+    <script src="../functions.js"></script>
+    <script src="../main.js"></script>
+    <script src="../navigation_style/script.js"></script>
+  </body>
 </html>

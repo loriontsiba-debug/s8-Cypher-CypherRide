@@ -5,12 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BraCovoit — Recherche</title>
     <link rel="stylesheet" href="recherche.css" />
+    <link rel="stylesheet" href="../navigation_style/navigation.css" />
   </head>
   <body id="page-recherche">
-    <!-- NAVIGATION — TODO (Dev FS2) -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="../../index.html">
+          <img src="../images/logo.jpg" width="250" alt="BraCovoit logo" />
+        </a>
 
-    <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-    <div id="nav-session"></div>
+        <button class="burger-btn" id="burgerBtn" aria-label="ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-principale" id="navPrin" aria-label="Navigation principale" aria-expanded="false">
+          <a href="../../index.html" class="nav-link">Accueil</a>
+          <a href="recherche.html" class="nav-link active">Rechercher</a>
+          <a href="../proposer/proposer.html" class="nav-link">Proposer un trajet</a>
+          <a href="../mes-trajets/mes-trajets.html" class="nav-link">Mes trajets</a>
+          <a href="../dashboard/dashboard.html" class="nav-link">Dashboard</a>
+
+          <div class="header-actions">
+            <div id="nav-session"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
 
     <main>
       <h2>Rechercher un trajet</h2>
@@ -82,8 +104,15 @@
 
     <div id="erreur-globale" hidden></div>
 
+    <footer>
+      <div class="footer-copyright">
+        <p>&copy; <span id="year"></span> BraCovoit. Tous droits réservés.</p>
+      </div>
+    </footer>
+
     <!-- NE PAS MODIFIER -->
     <script src="../functions.js"></script>
     <script src="../main.js"></script>
+    <script src="../navigation_style/script.js"></script>
   </body>
 </html>

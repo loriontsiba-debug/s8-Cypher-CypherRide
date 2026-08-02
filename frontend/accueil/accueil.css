@@ -1,0 +1,323 @@
+/* =========================================================
+   accueil.css — page d'accueil
+   Parti pris : éditorial, minimaliste. Des filets (traits fins)
+   plutôt que des ombres, des chiffres et numéros de section en
+   grand plutôt que des icônes, l'orange utilisé comme accent
+   ponctuel plutôt qu'en aplat. Dépend des variables définies
+   dans header-footer.css (--bc-orange, --bc-text, etc.).
+   ========================================================= */
+
+:root {
+  --couleur-orange: #EA5B25;
+  --couleur-orange-dark: #D94E1A;
+  --couleur-orange-light: #FDECE3;
+  --couleur-text: #2B2B2B;
+  --couleur-text-light: #6B6B6B;
+  --couleur-border: #E7E5E4;
+  --couleur-white: #FFFFFF;
+  --taille-radius: 10px;
+  --degre-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-heading {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--couleur-text-light);
+  margin: 0 0 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--couleur-border);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  padding: 96px 0 72px;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+.hero-content {
+  flex: 1;
+  max-width: 480px;
+}
+
+.hero-media {
+  flex: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+.hero-kicker {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--couleur-orange);
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--couleur-orange);
+}
+
+.hero-title {
+  font-size: 48px;
+  line-height: 1.12;
+  font-weight: 700;
+  color: var(--couleur-text);
+  margin: 0 0 24px;
+  letter-spacing: -0.01em;
+}
+
+.hero-text {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--couleur-text-light);
+  margin: 0 0 36px;
+  max-width: 480px;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--couleur-orange);
+  color: var(--couleur-white);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+
+.hero-cta:hover {
+  background: var(--couleur-orange-dark);
+}
+
+/* =========================================================
+   BANDEAU INDICATEURS
+   Pas de cartes flottantes : une bande à filets verticaux.
+   ========================================================= */
+.stats-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--couleur-border);
+  border-bottom: 1px solid var(--couleur-border);
+  margin-bottom: 96px;
+}
+
+.carte-indicateur {
+  padding: 28px 24px;
+  border-left: 1px solid var(--couleur-border);
+}
+
+.carte-indicateur:first-child {
+  border-left: none;
+}
+
+.carte-indicateur .label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--couleur-text-light);
+  margin: 0 0 10px;
+}
+
+.carte-indicateur .valeur {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--couleur-text);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* =========================================================
+   ÉTAPES — "comment ça marche"
+   ========================================================= */
+.etapes {
+  margin-bottom: 96px;
+}
+
+.etapes-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.etape {
+  padding: 0 32px;
+  border-left: 1px solid var(--couleur-border);
+}
+
+.etape:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.etape-numero {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--couleur-orange);
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.etape-titre {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--couleur-text);
+  margin: 0 0 10px;
+}
+
+.etape-texte {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--couleur-text-light);
+  margin: 0;
+}
+
+/* =========================================================
+   POURQUOI BRACOVOIT
+   ========================================================= */
+.pourquoi {
+  margin-bottom: 96px;
+}
+
+.pourquoi-liste {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pourquoi-item {
+  padding-top: 18px;
+  border-top: 2px solid var(--couleur-orange);
+}
+
+.pourquoi-titre {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--couleur-text);
+  margin: 0 0 10px;
+}
+
+.pourquoi-texte {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--couleur-text-light);
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* Tablette */
+@media (max-width: 960px) {
+  .hero {
+    padding: 72px 0 56px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .stats-band {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carte-indicateur:nth-child(3) {
+    border-left: none;
+  }
+
+  .carte-indicateur:nth-child(1),
+  .carte-indicateur:nth-child(2) {
+    border-bottom: 1px solid var(--couleur-border);
+    padding-bottom: 24px;
+  }
+
+  .carte-indicateur:nth-child(3),
+  .carte-indicateur:nth-child(4) {
+    padding-top: 24px;
+  }
+
+  .etapes-liste,
+  .pourquoi-liste {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .etape {
+    padding: 0;
+    border-left: none;
+    border-top: 1px solid var(--couleur-border);
+    padding-top: 32px;
+  }
+
+  .etape:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero {
+    padding: 56px 0 40px;
+  }
+
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-cta {
+    display: block;
+    text-align: center;
+  }
+
+  .stats-band {
+    grid-template-columns: 1fr;
+  }
+
+  .carte-indicateur {
+    border-left: none !important;
+    border-top: 1px solid var(--couleur-border);
+    padding: 20px 0;
+  }
+
+  .carte-indicateur:first-child {
+    border-top: none;
+  }
+
+  main {
+    padding: 0 20px;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .etapes,
+  .pourquoi {
+    margin-bottom: 64px;
+  }
+}
