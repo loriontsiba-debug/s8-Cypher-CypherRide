@@ -19,24 +19,44 @@
 // ============================================================================
 
 function compterTrajetsAujourdhui(trajets, dateAujourdhui) {
-  /**
-   * Compte le nombre de trajets prévus pour la date donnée.
-   * @param {Array} trajets - liste d'objets avec une clé "date" (ex: "2026-07-27")
-   * @param {string} dateAujourdhui - date au format "AAAA-MM-JJ"
-   * @return {number} - nombre de trajets à cette date
-   * Exemple : compterTrajetsAujourdhui([{date:"2026-07-27"},{date:"2026-07-28"}], "2026-07-27") → 1
-   */
-  // TODO
+    /**
+     * Compte le nombre de trajets prévus pour la date donnée.
+     * @param {Array} trajets - liste d'objets avec une clé "date" (ex: "2026-07-27")
+     * @param {string} dateAujourdhui - date au format "AAAA-MM-JJ"
+     * @return {number} - nombre de trajets à cette date
+     */
+    if (!Array.isArray(trajets)) {
+        return 0;
+    }
+    return trajets.filter(function (trajet) {
+        return trajet && trajet.date === dateAujourdhui;
+    }).length;
 }
 
 function formaterQuartierPrincipal(compteParQuartier) {
-  /**
-   * Retourne le nom du quartier qui a le plus de trajets, sous forme lisible.
-   * @param {Object} compteParQuartier - ex: {"Bacongo": 5, "Moungali": 3, "Poto-Poto": 8}
-   * @return {string} - ex: "Poto-Poto (8 trajets)"
-   * Si l'objet est vide, retourne "Aucun trajet".
-   */
-  // TODO
+   /**
+     * Retourne le nom du quartier qui a le plus de trajets, sous forme lisible.
+     * @param {Object} compteParQuartier - ex: {"Bacongo": 5, "Moungali": 3, "Poto-Poto": 8}
+     * @return {string} - ex: "Poto-Poto (8 trajets)"
+     */
+    const quartiers = Object.keys(compteParQuartier || {});
+    if (quartiers.length === 0) {
+        return "Aucun trajet";
+    }
+
+    let quartierPrincipal = quartiers[0];
+    let maxTrajets = compteParQuartier[quartierPrincipal];
+
+    for (let i = 1; i < quartiers.length; i++) {
+        const quartier = quartiers[i];
+        const nombre = compteParQuartier[quartier];
+        if (nombre > maxTrajets) {
+            maxTrajets = nombre;
+            quartierPrincipal = quartier;
+        }
+    }
+
+    return quartierPrincipal + " (" + maxTrajets + " trajets)";
 }
 
 // ============================================================================
