@@ -1,0 +1,406 @@
+/* ================================
+   RESET
+================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: #F9F6F0;
+    font-family: "Inter", sans-serif;
+    color: #111827;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.nav-bar {
+
+    background: white;
+    padding: 20px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 40px;
+}
+
+
+.logo h1 {
+
+    font-size: 30px;
+    font-weight: 700;
+
+}
+
+
+.logo span {
+
+    color: #D14900;
+
+}
+
+
+
+.liens ul {
+
+    display: flex;
+    list-style: none;
+    gap: 30px;
+
+}
+
+
+.liens a {
+
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+
+}
+
+
+.liens a:hover {
+
+    color: #D14900;
+
+}
+
+
+
+/* ================================
+   MAIN
+================================ */
+
+
+main {
+
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+
+}
+
+
+
+/* ================================
+   CONFIRMATION
+================================ */
+
+
+.bloc-confirmation {
+
+    background: white;
+
+    text-align: center;
+
+    padding: 50px 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+    margin-bottom: 30px;
+
+}
+
+
+
+.icone-success {
+
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 50%;
+
+    background: #A3F3C6;
+
+    color: #0D5D39;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 45px;
+    font-weight: bold;
+
+}
+
+
+
+.bloc-confirmation h2 {
+
+    font-size: 32px;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+#confirmation-message {
+
+    color: #6B7280;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+}
+
+
+
+/* ================================
+   PROCHAINES ETAPES
+================================ */
+
+
+.prochaines-etapes {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+}
+
+
+
+.prochaines-etapes h2 {
+
+    margin-bottom: 25px;
+
+    font-size: 24px;
+
+}
+
+
+
+.actions {
+
+    display: flex;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+.actions a {
+
+    flex: 1;
+
+    min-width: 200px;
+
+    text-align: center;
+
+    padding: 15px 20px;
+
+    background: #D14900;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 12px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+}
+
+
+
+.actions a:hover {
+
+    background: #A83B00;
+
+    transform: translateY(-3px);
+
+}
+
+
+
+/* ================================
+   TABLETTE
+================================ */
+
+
+@media (max-width: 1024px) {
+
+
+    .nav-bar {
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+        padding: 20px 30px;
+
+    }
+
+
+    .liens ul {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 20px;
+
+    }
+
+
+}
+
+
+
+/* ================================
+   TELEPHONE
+================================ */
+
+
+@media (max-width: 767px) {
+
+
+    body {
+
+        padding: 0;
+
+    }
+
+
+
+    .nav-bar {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 20px;
+
+    }
+
+
+
+    .liens {
+
+        width: 100%;
+
+    }
+
+
+
+    .liens ul {
+
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 15px;
+
+    }
+
+
+
+    .liens li {
+
+        width: 100%;
+
+    }
+
+
+
+    .liens a {
+
+        display: block;
+
+        width: 100%;
+
+        padding: 10px;
+
+        background: #F7F7F7;
+
+        border-radius: 8px;
+
+    }
+
+
+
+    #nav-session {
+
+        width: 100%;
+
+    }
+
+
+
+    main {
+
+        padding: 15px;
+
+    }
+
+
+
+    .bloc-confirmation {
+
+        padding: 35px 20px;
+
+    }
+
+
+
+    .bloc-confirmation h2 {
+
+        font-size: 26px;
+
+    }
+
+
+
+    .icone-success {
+
+        width: 65px;
+
+        height: 65px;
+
+        font-size: 35px;
+
+    }
+
+
+
+    .actions {
+
+        flex-direction: column;
+
+    }
+
+
+
+    .actions a {
+
+        width: 100%;
+
+    }
+
+
+}
