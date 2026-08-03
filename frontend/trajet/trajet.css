@@ -79,14 +79,20 @@ main {
 #erreurs-form {
   color: #ffffff;
   background-color: gold;
-  /* display: flex; */
   justify-content: center;
   text-align: center;
-  width: 60%;
+  width: 30%;
   margin: auto;
   padding-top: 10px;
   border-radius: 10px;
   margin-top: 10px;
+}
+#erreurs-form ul {
+  text-decoration: none;
+  list-style-type: none;
+  margin: auto;
+  height: auto;
+  padding: 10px;
 }
 
 #erreur-globale {
@@ -116,6 +122,10 @@ main {
     width: 80%;
     height: auto;
   }
+  #erreurs-form {
+    width: 80%;
+    height: auto;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .entete-trajet {
@@ -130,6 +140,10 @@ main {
     width: 80%;
     height: auto;
   }
+  #erreurs-form {
+    width: 40%;
+    height: auto;
+  }
 }
 @media only screen and (max-width: 1280px) {
   .entete-trajet {
@@ -142,6 +156,10 @@ main {
   }
   #form-reservation {
     width: 80%;
+    height: auto;
+  }
+  #erreurs-form {
+    width: 40%;
     height: auto;
   }
 }
