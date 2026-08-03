@@ -115,7 +115,8 @@ function formaterPrix(prix) {
    * Exemple : formaterPrix(500) → "500 FCFA", formaterPrix(1500) → "1 500 FCFA"
    */
   // TODO
-  return Number(prix).toLocaleString("fr-FR") + " FCFA";
+  // prix = Number(prix);
+  return Number(prix).toLocaleString(" fr-FR") + " FCFA";
 }
 
 function formaterHeure(heure) {
