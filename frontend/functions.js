@@ -115,8 +115,8 @@ function formaterPrix(prix) {
    * Exemple : formaterPrix(500) → "500 FCFA", formaterPrix(1500) → "1 500 FCFA"
    */
   // TODO
-  
-  return Number(prix).toLocaleString(" fr-FR") + " FCFA";
+
+  return Number(prix).toLocaleString("fr-FR") + " FCFA";
 }
 
 function formaterHeure(heure) {
@@ -304,7 +304,6 @@ function getBadgeDisponibilite(placesRestantes) {
     libelle: placesRestantes + " places",
     classe: "badge-dispo",
   };
-
 }
 
 // ============================================================================
