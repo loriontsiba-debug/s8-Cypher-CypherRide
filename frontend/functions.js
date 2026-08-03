@@ -115,7 +115,7 @@ function formaterPrix(prix) {
    * Exemple : formaterPrix(500) → "500 FCFA", formaterPrix(1500) → "1 500 FCFA"
    */
   // TODO
-  // prix = Number(prix);
+  
   return Number(prix).toLocaleString(" fr-FR") + " FCFA";
 }
 
@@ -293,6 +293,7 @@ function getBadgeDisponibilite(placesRestantes) {
    * - 2+ places → {libelle: "N places", classe: "badge-dispo"}  (N = placesRestantes)
    */
   // TODO
+
   if (placesRestantes === 0) {
     return { libelle: "Complet", classe: "badge-complet" };
   }
@@ -303,6 +304,7 @@ function getBadgeDisponibilite(placesRestantes) {
     libelle: placesRestantes + " places",
     classe: "badge-dispo",
   };
+
 }
 
 // ============================================================================
