@@ -19,44 +19,44 @@
 // ============================================================================
 
 function compterTrajetsAujourdhui(trajets, dateAujourdhui) {
-    /**
-     * Compte le nombre de trajets prévus pour la date donnée.
-     * @param {Array} trajets - liste d'objets avec une clé "date" (ex: "2026-07-27")
-     * @param {string} dateAujourdhui - date au format "AAAA-MM-JJ"
-     * @return {number} - nombre de trajets à cette date
-     */
-    if (!Array.isArray(trajets)) {
-        return 0;
-    }
-    return trajets.filter(function (trajet) {
-        return trajet && trajet.date === dateAujourdhui;
-    }).length;
+  /**
+   * Compte le nombre de trajets prévus pour la date donnée.
+   * @param {Array} trajets - liste d'objets avec une clé "date" (ex: "2026-07-27")
+   * @param {string} dateAujourdhui - date au format "AAAA-MM-JJ"
+   * @return {number} - nombre de trajets à cette date
+   */
+  if (!Array.isArray(trajets)) {
+    return 0;
+  }
+  return trajets.filter(function (trajet) {
+    return trajet && trajet.date === dateAujourdhui;
+  }).length;
 }
 
 function formaterQuartierPrincipal(compteParQuartier) {
-   /**
-     * Retourne le nom du quartier qui a le plus de trajets, sous forme lisible.
-     * @param {Object} compteParQuartier - ex: {"Bacongo": 5, "Moungali": 3, "Poto-Poto": 8}
-     * @return {string} - ex: "Poto-Poto (8 trajets)"
-     */
-    const quartiers = Object.keys(compteParQuartier || {});
-    if (quartiers.length === 0) {
-        return "Aucun trajet";
+  /**
+   * Retourne le nom du quartier qui a le plus de trajets, sous forme lisible.
+   * @param {Object} compteParQuartier - ex: {"Bacongo": 5, "Moungali": 3, "Poto-Poto": 8}
+   * @return {string} - ex: "Poto-Poto (8 trajets)"
+   */
+  const quartiers = Object.keys(compteParQuartier || {});
+  if (quartiers.length === 0) {
+    return "Aucun trajet";
+  }
+
+  let quartierPrincipal = quartiers[0];
+  let maxTrajets = compteParQuartier[quartierPrincipal];
+
+  for (let i = 1; i < quartiers.length; i++) {
+    const quartier = quartiers[i];
+    const nombre = compteParQuartier[quartier];
+    if (nombre > maxTrajets) {
+      maxTrajets = nombre;
+      quartierPrincipal = quartier;
     }
+  }
 
-    let quartierPrincipal = quartiers[0];
-    let maxTrajets = compteParQuartier[quartierPrincipal];
-
-    for (let i = 1; i < quartiers.length; i++) {
-        const quartier = quartiers[i];
-        const nombre = compteParQuartier[quartier];
-        if (nombre > maxTrajets) {
-            maxTrajets = nombre;
-            quartierPrincipal = quartier;
-        }
-    }
-
-    return quartierPrincipal + " (" + maxTrajets + " trajets)";
+  return quartierPrincipal + " (" + maxTrajets + " trajets)";
 }
 
 // ============================================================================
@@ -72,7 +72,7 @@ function filtrerParQuartierDepart(trajets, quartier) {
    * Si quartier est vide ou null, retourne tous les trajets.
    */
   // TODO
-  
+
   if (!quartier) {
     return trajets;
   }
@@ -115,7 +115,8 @@ function formaterPrix(prix) {
    * Exemple : formaterPrix(500) → "500 FCFA", formaterPrix(1500) → "1 500 FCFA"
    */
   // TODO
-  return prix.toLocaleString('fr-FR') + ' FCFA';
+  
+  return Number(prix).toLocaleString(" fr-FR") + " FCFA";
 }
 
 function formaterHeure(heure) {
@@ -179,15 +180,13 @@ function validerFormulaireProposer(formulaire) {
   // TODO
 }
 
-
-    /*return {
+/*return {
         valide: erreurs.length === 0,
         erreurs: erreurs
     };*/
-    function maFonction() {
+function maFonction() {
   return total;
 }
-
 
 function formaterMessageConfirmation(
   nom,
@@ -206,7 +205,6 @@ function formaterMessageConfirmation(
   // TODO
 }
 
-
 // ============================================================================
 // Dev FS5 — page Mes trajets
 // ============================================================================
@@ -219,7 +217,9 @@ function filtrerReservationsParStatut(reservations, statut) {
    * @return {Array} - réservations correspondantes
    */
   // TODO
-   return reservations.filter((reservation) => reservation.statut === statut );
+  return reservations.filter(
+    (reservation) => reservation.statut === statut || statut === "",
+  );
 }
 
 function calculerTotalDepenseParPassager(reservations) {
@@ -243,39 +243,32 @@ function calculerTotalDepenseParPassager(reservations) {
 // ============================================================================
 
 function calculerPourcentageOccupation(placesOccupees, placesTotales) {
+  if (placesTotales === 0) {
+    return 0;
+  }
 
-
-    if (placesTotales === 0) {
-        return 0;
-    }
-
-    return Math.round((placesOccupees / placesTotales) * 100);
+  return Math.round((placesOccupees / placesTotales) * 100);
 }
 
 function getBadgeDisponibilite(placesRestantes) {
-
-    if (placesRestantes === 0) {
-
-        return {
-            libelle: "Complet",
-            classe: "badge-complet"
-        };
-
-    }
-
-    if (placesRestantes === 1) {
-
-        return {
-            libelle: "1 place",
-            classe: "badge-limite"
-        };
-
-    }
-
+  if (placesRestantes === 0) {
     return {
-        libelle: placesRestantes + " places",
-        classe: "badge-dispo"
+      libelle: "Complet",
+      classe: "badge-complet",
     };
+  }
+
+  if (placesRestantes === 1) {
+    return {
+      libelle: "1 place",
+      classe: "badge-limite",
+    };
+  }
+
+  return {
+    libelle: placesRestantes + " places",
+    classe: "badge-dispo",
+  };
 
   /**
    * Calcule le pourcentage d'occupation d'un trajet.
@@ -300,6 +293,18 @@ function getBadgeDisponibilite(placesRestantes) {
    * - 2+ places → {libelle: "N places", classe: "badge-dispo"}  (N = placesRestantes)
    */
   // TODO
+
+  if (placesRestantes === 0) {
+    return { libelle: "Complet", classe: "badge-complet" };
+  }
+  if (placesRestantes === 1) {
+    return { libelle: "1 place", classe: "badge-limite" };
+  }
+  return {
+    libelle: placesRestantes + " places",
+    classe: "badge-dispo",
+  };
+
 }
 
 // ============================================================================
@@ -408,4 +413,3 @@ if (typeof module !== "undefined" && module.exports) {
     validerFormulaireLogin,
   };
 }
-
