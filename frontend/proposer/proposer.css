@@ -1,127 +1,126 @@
-*{
-font-family: "Inter", sans-serif;
+* {
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
-  font-style: normal}
-main{
-max-width: 100%;
+  font-style: normal;
+}
+main {
+  max-width: 100%;
 }
 /*definition de la police*/
-h1, p{
-font-family: "Inter", sans-serif;
-font-weight:bolder;
-margin-left: 20%;
-line-height: 20px;
+main h1,
+main p {
+  font-family: "Inter", sans-serif;
+  font-weight: bolder;
+  margin-left: 20%;
+  line-height: 20px;
 }
 /*coleur de du texte*/
-p{
-color: rgb(192, 192, 192);
+p {
+  color: rgb(192, 192, 192);
 }
 /*forme du formulaire et du responsive*/
-form{
-border: 1px solid rgb(214, 210, 210);
-max-width: 60%;
-padding-left: 2rem;
-margin-left: 20%;
-padding-top: 50px;
-margin-top: 20px;
-text-align: center;
-height: 680px;
-border-radius: 25px;
-box-shadow: 5px 5px 5px 5px  rgb(240, 237, 237);
+form {
+  border: 1px solid rgb(214, 210, 210);
+  max-width: 60%;
+  padding-left: 2rem;
+  margin-left: 20%;
+  padding-top: 50px;
+  margin-top: 20px;
+  text-align: center;
+  height: 680px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px 5px rgb(240, 237, 237);
 }
 /*mise en forme des champs de saisie */
-#p-depart{
-max-width: 90%;
-width: 100%;
-padding: 15px 15px 10px 10px;
-border-radius: 20px;
-border: 1px solid rgb(207, 204, 204);
-margin-top: 10px;
-margin-bottom: 20px;
+#p-depart {
+  max-width: 90%;
+  width: 100%;
+  padding: 15px 15px 10px 10px;
+  border-radius: 20px;
+  border: 1px solid rgb(207, 204, 204);
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
-#p-arrivee{
-max-width: 90%;
-width: 100%;
-padding: 15px 15px 10px 10px;
-border-radius: 20px;
-border: 1px solid rgb(207, 204, 204);
-margin-top: 20px;
-margin-bottom: 20px;
+#p-arrivee {
+  max-width: 90%;
+  width: 100%;
+  padding: 15px 15px 10px 10px;
+  border-radius: 20px;
+  border: 1px solid rgb(207, 204, 204);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-#p-heure{
-max-width: 88%;
-width: 100%;
-padding: 15px 15px 10px 10px;
-border-radius: 20px;
-border: 1px solid rgb(207, 204, 204);
-margin-top: 20px;
-margin-bottom: 20px;
+#p-heure {
+  max-width: 88%;
+  width: 100%;
+  padding: 15px 15px 10px 10px;
+  border-radius: 20px;
+  border: 1px solid rgb(207, 204, 204);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-#p-places{
-max-width: 88%;
-width: 100%;
-padding: 15px 15px 10px 10px;
-border-radius: 20px;
-border: 1px solid rgb(207, 204, 204);
-margin-top: 20px;
-margin-bottom: 20px;
+#p-places {
+  max-width: 88%;
+  width: 100%;
+  padding: 15px 15px 10px 10px;
+  border-radius: 20px;
+  border: 1px solid rgb(207, 204, 204);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-#p-prix{
-max-width: 88%;
-width: 100%;
-padding: 15px 15px 10px 10px;
-border-radius: 20px;
-border: 1px solid rgb(207, 204, 204);
-margin-top: 20px;
-margin-bottom: 20px;
+#p-prix {
+  max-width: 88%;
+  width: 100%;
+  padding: 15px 15px 10px 10px;
+  border-radius: 20px;
+  border: 1px solid rgb(207, 204, 204);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-button{
-max-width: 90%;
-width: 100%;
-padding: 15px 15px 10px 10px;
-border-radius: 20px;
-margin-top: 20px;
-border: none;
-background-color: darkorange;
+main button {
+  max-width: 90%;
+  width: 100%;
+  padding: 15px 15px 10px 10px;
+  border-radius: 20px;
+  margin-top: 20px;
+  border: none;
+  background-color: darkorange;
 }
-button:hover{
-color: rgb(7, 7, 7);
-background-color: white;
-transition: 0.5s;
-border: 1px solid rgb(78, 78, 76);
+main button:hover {
+  color: rgb(7, 7, 7);
+  background-color: white;
+  transition: 0.5s;
+  border: 1px solid rgb(78, 78, 76);
 }
 /*desponsive disign mobile*/
-@media only screen and (max-width: 480px)
-{
-form{
-padding-right: 45px;
-margin-left: 10%;
+@media only screen and (max-width: 480px) {
+  form {
+    padding-right: 45px;
+    margin-left: 10%;
+  }
 }
+#erreurs-form {
+  width: 61%;
+  max-width: 100%;
+  margin-left: 20%;
+  margin-top: 20px;
+  border: 1px solid rgb(197, 196, 196);
+  box-shadow: 5px 5px 5px 5px rgb(240, 237, 237);
+  border-radius: 10px;
 }
-#erreurs-form{
-width: 61%;
-max-width: 100%;
-margin-left: 20%;
-margin-top: 20px;
-border: 1px solid rgb(197, 196, 196) ;
-box-shadow: 5px 5px 5px 5px  rgb(240, 237, 237);
-border-radius: 10px;
-
+#erreurs-form ul {
+  font-size: 1rem;
+  line-height: 25px;
+  color: red;
 }
-#erreurs-form ul{
-font-size: 1rem;
-line-height: 25px;
-color: red;
-
+@media only screen and (max-width: 768px) {
+  #erreurs-form {
+    margin-left: 155px;
+  }
 }
-@media only screen and (max-width: 768px){
-#erreurs-form{
-margin-left: 155px;
-}
-}
-@media only screen and (max-width: 375px){
-#erreurs-form{
-margin-left: 100px;
-}
+@media only screen and (max-width: 375px) {
+  #erreurs-form {
+    margin-left: 100px;
+  }
 }

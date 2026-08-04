@@ -5,35 +5,29 @@
 /* RESET */
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
-  font-style: normal
-}
-
-body {
-  background: #f9f6f0;
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
   font-style: normal;
 }
 
-header {
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* header {
   background-color: white;
   padding: 20px 40px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   margin-bottom: 30px;
-}
+} */
 
 main {
   max-width: 1200px;
   margin: auto;
 
-  background: #f9f6f0;
+  /* background: #f9f6f0; */
 
   font-family: "Inter", sans-serif;
 
@@ -382,11 +376,11 @@ tr:hover {
 }
 
 @media (min-width: 768px) and (max-width: 1099px) {
-  header {
+  /* header {
     padding: 20px 30px;
-  }
+  } */
 
-  .nav-bar {
+  /* .nav-bar {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
@@ -396,7 +390,7 @@ tr:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-  }
+  } */
 
   .dashboard-entete {
     flex-direction: column;
@@ -414,11 +408,11 @@ tr:hover {
     padding: 10px;
   }
 
-  header {
+  /* header {
     padding: 20px;
-  }
+  } */
 
-  .nav-bar {
+  /* .nav-bar {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
@@ -442,7 +436,7 @@ tr:hover {
   #nav-session {
     width: 100%;
     margin-top: 10px;
-  }
+  } */
 
   .dashboard-entete {
     flex-direction: column;
@@ -461,11 +455,11 @@ tr:hover {
   }
 
   @media (max-width: 700px) {
-    .header-inner {
+    /* .header-inner {
       flex-wrap: wrap;
-    }
+    } */
 
-    .nav-principale {
+    /* .nav-principale {
       width: 100%;
 
       flex-direction: column;
@@ -475,7 +469,7 @@ tr:hover {
       width: 100%;
 
       flex-direction: column;
-    }
+    } */
 
     .container {
       padding: 15px;
