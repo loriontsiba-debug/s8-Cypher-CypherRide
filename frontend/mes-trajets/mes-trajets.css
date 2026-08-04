@@ -18,8 +18,8 @@ main {
   text-align: center;
 }
 
-h1,
-p {
+main h1,
+main p {
   font-family: "Inter", sans-serif;
   font-weight: bolder;
   line-height: 20px;
@@ -40,14 +40,14 @@ p {
   border-radius: 10px;
   background-color: #d1c5b344;
 }
- #entete-mes-trajets {
+#entete-mes-trajets {
   text-align: left;
   width: 65%;
   margin: auto;
 }
-.barre-recherche-tel input,
-button,
-select {
+.barre-recherche-tel #mt-tel,
+.barre-recherche-tel #btn-charger-mestrajets,
+.barre-recherche-tel #mt-filtre-statut {
   height: 25px;
   border-radius: 5px;
   margin-bottom: 10px;

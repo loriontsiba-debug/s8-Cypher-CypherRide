@@ -8,17 +8,22 @@
    ========================================================= */
 
 :root {
-  --couleur-orange: #EA5B25;
-  --couleur-orange-dark: #D94E1A;
-  --couleur-orange-light: #FDECE3;
-  --couleur-text: #2B2B2B;
-  --couleur-text-light: #6B6B6B;
-  --couleur-border: #E7E5E4;
-  --couleur-white: #FFFFFF;
+  --couleur-orange: #ea5b25;
+  --couleur-orange-dark: #d94e1a;
+  --couleur-orange-light: #fdece3;
+  --couleur-text: #2b2b2b;
+  --couleur-text-light: #6b6b6b;
+  --couleur-border: #e7e5e4;
+  --couleur-white: #ffffff;
   --taille-radius: 10px;
   --degre-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
-
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 700;
+}
 
 main {
   max-width: 1100px;

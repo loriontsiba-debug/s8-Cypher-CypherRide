@@ -1,11 +1,8 @@
-¨* {
-  box-sizing: border-box;
-  border: 0;
-  padding: 0;
+* {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
-  font-style: normal
+  font-style: normal;
 }
 :root {
   --orange: #ff6b00;
@@ -16,13 +13,13 @@
   --rouge: #ef4444;
   --radius: 12px;
 }
-body {
+/* body {
   background: var(--gris-clair);
-}
+} */
 main {
   max-width: 1200px;
   margin: 2rem auto;
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
   font-family: "Inter", sans-serif;
   color: var(--texte);
 }
@@ -174,9 +171,9 @@ main h2 {
   margin-top: 0.5rem;
   font-size: 0.9rem;
 }
-#liste-trajets a{
-text-decoration: none;
-padding: 10px 20px;
+#liste-trajets a {
+  text-decoration: none;
+  padding: 10px 20px;
   border-radius: var(--taille-radius);
   font-size: 15px;
   font-weight: 600;
@@ -184,7 +181,9 @@ padding: 10px 20px;
   text-align: center;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: opacity 0.2s ease, background 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease;
   background-color: #ff6b00;
   color: black;
 }
