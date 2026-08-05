@@ -51,13 +51,13 @@ Chaque page est dans son propre sous-dossier avec son fichier CSS dédié. L'ess
 
 | Qui | Dossier & page | Fonctions JS |
 | --- | --- | --- |
-| Dev FS1 | `frontend/accueil/index.html` + `accueil.css` — page d'accueil, hero + indicateurs clés | `compterTrajetsAujourdhui`, `formaterQuartierPrincipal` |
-| Dev FS2 | `frontend/recherche/recherche.html` + `recherche.css` — recherche et filtres | `filtrerParQuartierDepart`, `rechercherParMotCle` |
-| Dev FS3 | `frontend/trajet/trajet.html` + `trajet.css` — détail d'un trajet + réservation | `formaterPrix`, `formaterHeure` |
-| Dev FS4 | `frontend/proposer/proposer.html` + `proposer.css` — formulaire conducteur | `validerFormulaireProposer`, `formaterMessageConfirmation` |
-| Dev FS5 | `frontend/mes-trajets/mes-trajets.html` + `mes-trajets.css` — historique passager | `filtrerReservationsParStatut`, `calculerTotalDepenseParPassager` |
-| Dev FS6 | `frontend/dashboard/dashboard.html` + `dashboard.css` **ET** `frontend/confirmation/confirmation.html` + `confirmation.css` | `calculerPourcentageOccupation`, `getBadgeDisponibilite` |
-| Dev FS7 | `frontend/inscription/inscription.html` + `inscription.css` **ET** `frontend/login/login.html` + `login.css` | `validerFormulaireInscription`, `validerFormulaireLogin` |
+| DIABY AMINATA YAHAYA Dev FS1 | `frontend/accueil/index.html` + `accueil.css` — page d'accueil, hero + indicateurs clés | `compterTrajetsAujourdhui`, `formaterQuartierPrincipal` |
+| OKONIA PATIENCE THEO Dev FS2 | `frontend/recherche/recherche.html` + `recherche.css` — recherche et filtres | `filtrerParQuartierDepart`, `rechercherParMotCle` |
+| MOUSSOUNDA KARENE Dev FS3 | `frontend/trajet/trajet.html` + `trajet.css` — détail d'un trajet + réservation | `formaterPrix`, `formaterHeure` |
+| TSIBA LORION Dev FS4 | `frontend/proposer/proposer.html` + `proposer.css` — formulaire conducteur | `validerFormulaireProposer`, `formaterMessageConfirmation` |
+| MOUSSOUNDA KARENE Dev FS5 | `frontend/mes-trajets/mes-trajets.html` + `mes-trajets.css` — historique passager | `filtrerReservationsParStatut`, `calculerTotalDepenseParPassager` |
+| MOUNKOUANGA TOMBET BRISSAM Dev FS6 | `frontend/dashboard/dashboard.html` + `dashboard.css` **ET** `frontend/confirmation/confirmation.html` + `confirmation.css` | `calculerPourcentageOccupation`, `getBadgeDisponibilite` |
+| KITSORO SHEKINA LOUISSEL 1er Dev FS7 | `frontend/inscription/inscription.html` + `inscription.css` **ET** `frontend/login/login.html` + `login.css` | `validerFormulaireInscription`, `validerFormulaireLogin` |
 
 Chaque page contient des commentaires `<!-- TODO -->` indiquant le travail attendu, avec le layout, les éléments à construire et les classes CSS que `main.js` utilise déjà pour injecter le contenu dynamique. **Les éléments marqués "NE PAS MODIFIER" (IDs, scripts, formulaires) sont le câblage vers le backend — ne les changez pas, sinon les données ne s'afficheront plus.**
 
