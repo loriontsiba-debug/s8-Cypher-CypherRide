@@ -44,7 +44,10 @@ l'API est bien ouvert et actif (pas d'erreur affichée dedans). Si vous   venez 
 | **Full Stack** | 7 personnes | *voir répartition ci-dessous* | `main.js` |
 
 **Le nommage des champs est déjà fixé dans le code** (docstrings de `logic.py`, structure de `data/trajets.json`, IDs des éléments HTML). Vous n'avez pas à deviner ces noms — regardez les docstrings et le jeu de données pour comprendre le contrat technique attendu.
-
+## Répartition data science
+| Qui | logic py |
+| EVAN KOLELA     | ZONE A ET B |
+| EMMANUEL IVANGUI| ZONE C ET D |
 ## Répartition Full Stack
 
 Chaque page est dans son propre sous-dossier avec son fichier CSS dédié. L'essentiel de votre note porte sur vos **pages HTML/CSS** (structure sémantique, box model, Flexbox/Grid, responsive mobile/tablette/desktop). Chacun complète aussi **2 fonctions JS** dans `frontend/functions.js`.
