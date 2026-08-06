@@ -57,7 +57,7 @@ Chaque page est dans son propre sous-dossier avec son fichier CSS dédié. L'ess
 | Qui | Dossier & page | Fonctions JS |
 | --- | --- | --- |
 | DIABY AMINATA YAHAYA Dev FS1 | `frontend/accueil/index.html` + `accueil.css` — page d'accueil, hero + indicateurs clés | `compterTrajetsAujourdhui`, `formaterQuartierPrincipal` |
-| OKANIA PATIENCE THEO Dev FS2 | `frontend/recherche/recherche.html` + `recherche.css` — recherche et filtres | `filtrerParQuartierDepart`, `rechercherParMotCle` |
+| OKANIA PATIENCE THEO Dev FS2  | `frontend/recherche/recherche.html` + `recherche.css` — recherche et filtres | `filtrerParQuartierDepart`, `rechercherParMotCle` |
 | MOUSSOUNDA KARENE Dev FS3 | `frontend/trajet/trajet.html` + `trajet.css` — détail d'un trajet + réservation | `formaterPrix`, `formaterHeure` |
 | TSIBA LORION Dev FS4 | `frontend/proposer/proposer.html` + `proposer.css` — formulaire conducteur | `validerFormulaireProposer`, `formaterMessageConfirmation` |
 | MOUSSOUNDA KARENE Dev FS5 | `frontend/mes-trajets/mes-trajets.html` + `mes-trajets.css` — historique passager | `filtrerReservationsParStatut`, `calculerTotalDepenseParPassager` |
